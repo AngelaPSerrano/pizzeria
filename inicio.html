@@ -5,8 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-    
+    <header>
+        <p>Pizzería</p>
+        <h1>Verona</h1>
+    </header>
+
+    <nav class="navbar">
+            <a href="contacto.html">Contacto</a>
+            <a href="conocenos.html">Conócenos</a>
+            <a href="pedidos.html">Pedidos</a>
+            <a class="active">Inicio</a>
+    </nav>
+
+    <section>
+        <div>
+            <img class="imgSlide" src="img/p1.jpg" width="100%">
+            <img class="imgSlide" src="img/p2.jpg" width="100%">
+            <img class="imgSlide" src="img/p3.jpg" width="100%">
+            <img class="imgSlide" src="img/p4.jpg" width="100%">
+        </div>
+        <div class="grid-container">
+            <a class="grid-item" href="pedidos.html">
+                <img src="img/pizza.png" alt="" height="200" width="200">
+                <h2>Ofertas especiales</h2>
+            </a>
+            <a class="grid-item" href="#">
+                <img src="img/pizza.png" alt="" height="200" width="200">
+                <h2>Crea tu pizza</h2>
+            </a>
+            <a class="grid-item" href="contacto.html">
+                <img src="img/pizza.png" alt="" height="200" width="200">
+                <h2>Dónde estamos</h2>
+            </a>
+
+        </div>
+    </section>
+
+    <footer>
+        Footer
+    </footer>
+
+    <script>
+    var slideIndex = 0;
+    carousel();
+
+    function carousel() {
+    var i;
+    var x = document.getElementsByClassName("imgSlide");
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none"; 
+    }
+    slideIndex++;
+    if (slideIndex > x.length) {slideIndex = 1} 
+    x[slideIndex-1].style.display = "block"; 
+    setTimeout(carousel, 2000);
+    }
+    </script>
 </body>
 </html>
