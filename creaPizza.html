@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Visor interactivo -->
+    <img src="img/capas/masa.png" alt="" id="vMasa">
+    <img src=" " alt="" id="vSalsa">
+
+    <form action="" method="post">
+        <!-- Selectores de salsa -->
+        <select name="salsa" id="selectSalsa">
+            <option value="sTomate">Salsa de Tomate</option>
+            <option value="sCarbonara">Salsa Carbonara</option>
+            <option value="sBarbacoa">Salsa Barbacoa</option>
+        </select>
+        <button onclick="cambioSalsa()">Salsa</button>
+
+        <!--<button name="" id="sTomate">Salsa de Tomate</button>
+        <button name="" id="sCarbonara">Salsa Barbacoa</button>
+        <button name="" id="sBarbacoa">Salsa Carbonara</button>-->
+        <!-- Selectores ingredientes -->
+        <br>
+        <button name="iTomate" id="iTomate">Tomate natural</button>
+        <button name="iTernera" id="iTernera">Ternera picada</button>
+        <button name="iPollo" id="iPollo">Pollo braseado</button>
+        <button name="iChampis" id="iChampis">Champiñones</button>
+        <button name="iPimiento" id="iPimiento">Pimiento</button>
+        <button name="iSalami" id="iSalami">Salami</button>
+    </form>
+
+    <script>
+        var vSalsa = document.getElementById("vSalsa");
+        var selectSalsa = document.getElementById("selectSalsa");
+
+        function cambioSalsa() {
+            vSalsa.src = "img/capas/" + selectSalsa.value + ".png";
+        }
+    </script>
+</body>
+
+</html>
