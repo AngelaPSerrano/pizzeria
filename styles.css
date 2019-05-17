@@ -1,0 +1,63 @@
+* {
+    box-sizing: border-box;
+}
+header {
+    background-color: red;
+    color: white;
+    padding: 30px 20px;
+}
+header h1 {
+    padding: 0px;
+    margin: 0px;
+}
+header p {
+    padding: 0px;
+    margin: 0px;
+}
+nav {
+    background-color: black;
+    overflow: hidden;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    float: right;
+}
+nav a.active {
+    background: lightgray;
+    color: black;
+}
+nav a:hover {
+    background-color: darkgray;
+    color: black;
+}
+.contenido {
+    display: flex;
+}
+.leftColumn {
+    flex: 75%;
+    padding: 20px;
+}
+.grid-container {
+    display: grid;
+    grid: auto / auto auto auto;
+}
+.grid-item {
+    padding: 10px;
+    text-align: center;
+}
+.grid-item img {
+    display: block;
+    margin: 0px auto;
+}
+.rightColumn {
+    flex: 25%;
+    padding: 20px;
+}
+footer {
+    background-color: red;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
