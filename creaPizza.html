@@ -6,41 +6,152 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        img {
+            position: absolute;
+            margin-left: 200px;
+        }
+        
+        div {
+            background-color: aliceblue;
+            width: 200px;
+        }
+    </style>
 </head>
 
 <body>
     <!-- Visor interactivo -->
-    <img src="img/capas/masa.png" alt="" id="vMasa">
-    <img src=" " alt="" id="vSalsa">
+    <img src="img\\capas\\masa.png" alt="" id="vMasa">
+    <img src="img\\capas\\sTomate.png" alt="" id="vSalsa">
+    <img src="img\\capas\\queso.png" alt="" id="vQueso">
+    <img src="img\\capas\\none.png" name="true" alt="" id="ingrediente1">
+    <img src="img\\capas\\none.png" name="true" alt="" id="ingrediente2">
+    <img src="img\\capas\\none.png" name="true" alt="" id="ingrediente3">
+    <img src="img\\capas\\none.png" name="true" alt="" id="ingrediente4">
+    <img src="img\\capas\\none.png" name="true" alt="" id="ingrediente5">
 
-    <form action="" method="post">
-        <!-- Selectores de salsa -->
-        <select name="salsa" id="selectSalsa">
-            <option value="sTomate">Salsa de Tomate</option>
-            <option value="sCarbonara">Salsa Carbonara</option>
-            <option value="sBarbacoa">Salsa Barbacoa</option>
-        </select>
-        <button onclick="cambioSalsa()">Salsa</button>
 
-        <!--<button name="" id="sTomate">Salsa de Tomate</button>
-        <button name="" id="sCarbonara">Salsa Barbacoa</button>
-        <button name="" id="sBarbacoa">Salsa Carbonara</button>-->
-        <!-- Selectores ingredientes -->
+    <!-- Selectores de salsa -->
+    <select name="salsa" id="selectSalsa">
+        <option value="sTomate">Salsa de Tomate</option>
+        <option value="sCarbonara">Salsa Carbonara</option>
+        <option value="sBarbacoa">Salsa Barbacoa</option>
+    </select>
+    <button onclick="cambioSalsa()">Salsa</button>
+
+    <!-- Botones ingredientes -->
+    <br><br>
+    <table>
+        <tr>
+            <td><button name="iTomate" id="iTomate-1" onclick="quitarIngrediente('iTomate')">-</button></td>
+            <td><label for="">Tomate natural</label></td>
+            <td><button name="iTomate" id="iTomate+1" onclick="añadirIngrediente('iTomate')">+</button></td>
+        </tr>
+        <label for="" id="cantidadiTomate">0</label>
         <br>
-        <button name="iTomate" id="iTomate">Tomate natural</button>
-        <button name="iTernera" id="iTernera">Ternera picada</button>
-        <button name="iPollo" id="iPollo">Pollo braseado</button>
-        <button name="iChampis" id="iChampis">Champiñones</button>
-        <button name="iPimiento" id="iPimiento">Pimiento</button>
-        <button name="iSalami" id="iSalami">Salami</button>
-    </form>
+        <tr>
+            <td><button name="iTernera" id="iTernera-1" onclick="quitarIngrediente('iTernera')">-</button></td>
+            <td><label for="">Ternera picada</label></td>
+            <td><button name="iTernera" id="iTernera+1" onclick="añadirIngrediente('iTernera')">+</button></td>
+        </tr>
+        <label for="" id="cantidadiTernera">0</label>
+        <br>
+        <tr>
+            <td><button name="iPollo" id="iPollo-1" onclick="quitarIngrediente('iPollo')">-</button></td>
+            <td><label for="">Pollo braseado</label></td>
+            <td><button name="iPollo" id="iPollo+1" onclick="añadirIngrediente('iPollo')">+</button></td>
+        </tr>
+        <label for="" id="cantidadiPollo">0</label>
 
+        <br>
+        <tr>
+            <td><button name="iChampis" id="iChampis-1" onclick="quitarIngrediente('iChampis')">-</button></td>
+            <td><label for="">Champiñones</label></td>
+            <td><button name="iChampis" id="iChampis+1" onclick="añadirIngrediente('iChampis')">+</button></td>
+        </tr>
+        <label for="" id="cantidadiChampis">0</label>
+        <br>
+        <tr>
+            <td><button name="iPimiento" id="iPimiento-1" onclick="quitarIngrediente('iPimiento')">-</button></td>
+            <td><label for="">Pimiento</label></td>
+            <td><button name="iPimiento" id="iPimiento+1" onclick="añadirIngrediente('iPimiento')">+</button></td>
+        </tr>
+        <label for="" id="cantidadiPimiento">0</label>
+        <br>
+        <tr>
+            <td><button name="iSalami" id="iSalami-1" onclick="quitarIngrediente('iSalami')">-</button></td>
+            <td><label for="">Salami</label></td>
+            <td><button name="iSalami" id="iSalami+1" onclick="añadirIngrediente('iSalami')">+</button></td>
+        </tr>
+        <label for="" id="cantidadiSalami">0</label>
+
+    </table>
     <script>
         var vSalsa = document.getElementById("vSalsa");
         var selectSalsa = document.getElementById("selectSalsa");
 
+
+
         function cambioSalsa() {
-            vSalsa.src = "img/capas/" + selectSalsa.value + ".png";
+            vSalsa.src = "img\\capas\\" + selectSalsa.value + ".png";
+        }
+
+        function añadirIngrediente(e) {
+            for (i = 1; i <= 5; i++) {
+                var ingrediente = document.getElementById("ingrediente" + i);
+
+
+                if (ingrediente.name == "true") {
+
+                    ingrediente.src = "img\\capas\\" + e + ".png";
+                    ingrediente.name = "false";
+
+                    var cantidad = parseInt(document.getElementById("cantidad" + e).innerHTML);
+                    if (cantidad = 0) {
+                        document.getElementById("cantidad" + e).style.visibility = 'visible';
+                    }
+
+                    if (cantidad > 0 && cantidad < 5) {
+                        cantidad++;
+                    } else if (cantidad == 5) {
+                        console.log("No más");
+
+                    } else {
+                        cantidad = 1;
+                    }
+
+                    console.log(cantidad);
+                    document.getElementById("cantidad" + e).innerHTML = cantidad;
+                    return;
+                }
+            }
+            alert("Límite de ingredientes alcanzado. Elimina un ingrediente.");
+        }
+
+        function quitarIngrediente(e) {
+
+            for (i = 1; i < 5; i++) {
+                var ingrediente = document.getElementById("ingrediente" + i);
+
+
+                if (ingrediente.name == "false" && ingrediente.src.includes(e)) {
+
+                    ingrediente.src = "img\\capas\\none.png";
+                    ingrediente.name = "true";
+
+                    var cantidad = parseInt(document.getElementById("cantidad" + e).innerHTML);
+
+                    if (cantidad > 0) {
+                        cantidad--;
+                    }
+
+                    document.getElementById("cantidad" + e).innerHTML = cantidad;
+                    if (cantidad = 0) {
+                        document.getElementById("cantidad" + e).style.visibility = 'hidden';
+                    }
+                    return;
+                }
+            }
         }
     </script>
 </body>
