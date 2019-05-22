@@ -55,15 +55,39 @@ nav a.active {
 }
 .grid-item img {
     display: block;
-    margin: 0px auto;
+    margin: 20px auto;
 }
 .rightColumn {
     flex: 25%;
-    padding-left: 20px;
 }
 footer {
     background-color: red;
     color: white;
     text-align: center;
     padding: 20px;
+}
+
+/* Carro de la compra */
+.pedidoGrid {
+    display: none;
+    grid: auto / 15% 45% 20% 20%;
+    border: 1px solid black;
+    padding: 5px 0px;
+    margin-bottom: 5px;
+}
+.pedidoGrid-item {
+    text-align: center;
+}
+
+/* Página 'Conócenos' */
+.gridConocenos {
+    display: grid;
+    grid: auto / 15% 85%;
+    grid-gap: 0px 15px;
+}
+.gridConocenos-item {
+    margin: 15px 0px;
+}
+.gridConocenos-item h3 {
+    margin-top: 0px;
 }
