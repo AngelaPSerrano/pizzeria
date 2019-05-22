@@ -161,13 +161,8 @@
     <script>
         var vSalsa = document.getElementById("vSalsa");
         var selectSalsa = document.getElementById("selectSalsa");
-        /*var cantidadListado = {
-            1:1,
-            2:2,
-            3:3,
-            4:4,
-            5:5
-        }*/
+
+        // Función resetear la selección
         function reset() {
             var reset = confirm("¿Seguro que desea eliminar la pizza y volver a empezar?");
             if (reset === true) {
@@ -189,10 +184,12 @@
             }
         }
 
+        //Función cambio de imagen de la salsa
         function cambioSalsa() {
             vSalsa.src = "img\\capas\\" + selectSalsa.value + ".png";
         }
 
+        //Función añadir ingredientes. El argumento que se le pasa es el nombre del ingrediente
         function añadirIngrediente(e) {
             for (i = 1; i <= 5; i++) {
                 var ingrediente = document.getElementById("ingrediente" + i);
@@ -218,6 +215,7 @@
             alert("Límite de ingredientes alcanzado. Elimina un ingrediente.");
         }
 
+        //Función quitar ingredientes. El argumento que se le pasa es el nombre del ingrediente
         function quitarIngrediente(e) {
 
             for (i = 1; i <= 5; i++) {
