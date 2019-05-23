@@ -1,65 +1,80 @@
 * {
     box-sizing: border-box;
 }
+
 header {
     background-color: red;
     color: white;
     padding: 30px 20px;
 }
+
 header h1 {
     padding: 0px;
     margin: 0px;
 }
+
 header p {
     padding: 0px;
     margin: 0px;
 }
+
 nav {
     background-color: black;
     overflow: hidden;
 }
+
 nav a {
     color: white;
     text-decoration: none;
     padding: 10px;
     float: right;
 }
+
 nav a:hover {
     background-color: darkgrey;
     color: black;
 }
+
 nav a.active {
     background: lightgray;
     color: black;
 }
+
 .contenido {
     display: flex;
-    padding-top: 20px;
+    padding-top: 0px;
 }
+
 .leftColumn {
     flex: 75%;
     padding-right: 20px;
 }
+
 .titulo {
     background-color: lightgray;
     color: red;
     padding: 15px;
 }
+
 .grid-container {
     display: grid;
     grid: auto / auto auto auto;
 }
+
 .grid-item {
     padding: 10px;
     text-align: center;
 }
+
 .grid-item img {
     display: block;
     margin: 20px auto;
 }
+
 .rightColumn {
     flex: 25%;
 }
+
 footer {
     background-color: red;
     color: white;
@@ -67,7 +82,9 @@ footer {
     padding: 20px;
 }
 
+
 /* Carro de la compra */
+
 .pedidoGrid {
     display: none;
     grid: auto / 15% 45% 20% 20%;
@@ -75,19 +92,24 @@ footer {
     padding: 5px 0px;
     margin-bottom: 5px;
 }
+
 .pedidoGrid-item {
     text-align: center;
 }
 
+
 /* Página 'Conócenos' */
+
 .gridConocenos {
     display: grid;
     grid: auto / 15% 85%;
     grid-gap: 0px 15px;
 }
+
 .gridConocenos-item {
     margin: 15px 0px;
 }
+
 .gridConocenos-item h3 {
     margin-top: 0px;
 }
