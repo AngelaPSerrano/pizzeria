@@ -12,15 +12,13 @@
         
         #interiorMenuSelectores {
             text-align: center;
+            margin: 0;
         }
         
         .imgVisorInteractivo {
             position: absolute;
             height: auto;
-            margin-left: 6%;
-            margin-right: 8%;
             width: 400px;
-            margin-right: 66%;
         }
         
         #botonesResetEnviar {
@@ -28,9 +26,10 @@
             margin-top: 20px;
         }
         
-        table {
+        #tablaIngredientes {
             text-align: center;
             padding-left: auto;
+            margin-top: 0;
             display: inline-block;
         }
         
@@ -69,6 +68,7 @@
         }
         
         #menuSelectores {
+            padding-top: 20px;
             float: right;
             flex: 25%;
         }
@@ -83,7 +83,6 @@
             .imgVisorInteractivo {
                 height: 290px;
                 width: auto;
-                margin-left: 25%;
             }
             #menuSelectores {
                 width: 100%;
@@ -105,7 +104,7 @@
     </style>
 </head>
 
-<body>
+<body onload="inicio()">
     <header>
         <p>Pizzería</p>
         <h1>Verona</h1>
@@ -143,21 +142,22 @@
         </select>
                 <button onclick="cambioSalsa()" class="buttonBig">Seleccionar salsa</button>
                 <!-- Botones ingredientes -->
-                <table>
+                <h3 id="tituloTabla">Selección de ingredientes</h3>
+                <table id="tablaIngredientes">
                     <tr>
                         <td><button name="iTomate" id="iTomate-1" onclick="quitarIngrediente('iTomate')">-</button></td>
                         <td><label for="">Tomate natural</label></td>
                         <td><button name="iTomate" id="iTomate+1" onclick="añadirIngrediente('iTomate')">+</button></td>
                     </tr>
                     <label for="" id="cantidadiTomate" style="display: none;">0</label>
-                    <br>
+
                     <tr>
                         <td><button name="iTernera" id="iTernera-1" onclick="quitarIngrediente('iTernera')">-</button></td>
                         <td><label for="">Ternera picada</label></td>
                         <td><button name="iTernera" id="iTernera+1" onclick="añadirIngrediente('iTernera')">+</button></td>
                     </tr>
                     <label for="" id="cantidadiTernera" style="display: none;">0</label>
-                    <br>
+
                     <tr>
                         <td><button name="iPollo" id="iPollo-1" onclick="quitarIngrediente('iPollo')">-</button></td>
                         <td><label for="">Pollo braseado</label></td>
@@ -165,29 +165,30 @@
                     </tr>
                     <label for="" id="cantidadiPollo" style="display: none;">0</label>
 
-                    <br>
+
                     <tr>
                         <td><button name="iChampis" id="iChampis-1" onclick="quitarIngrediente('iChampis')">-</button></td>
                         <td><label for="">Champiñones</label></td>
                         <td><button name="iChampis" id="iChampis+1" onclick="añadirIngrediente('iChampis')">+</button></td>
                     </tr>
                     <label for="" id="cantidadiChampis" style="display: none;">0</label>
-                    <br>
+
                     <tr>
                         <td><button name="iPimiento" id="iPimiento-1" onclick="quitarIngrediente('iPimiento')">-</button></td>
                         <td><label for="">Pimiento</label></td>
                         <td><button name="iPimiento" id="iPimiento+1" onclick="añadirIngrediente('iPimiento')">+</button></td>
+                        <label for="" id="cantidadiPimiento" style="display: none;">0</label>
                     </tr>
-                    <label for="" id="cantidadiPimiento" style="display: none;">0</label>
-                    <br>
+
+
                     <tr>
                         <td><button name="iSalami" id="iSalami-1" onclick="quitarIngrediente('iSalami')">-</button></td>
                         <td><label for="">Salami</label></td>
                         <td><button name="iSalami" id="iSalami+1" onclick="añadirIngrediente('iSalami')">+</button></td>
+                        <td><label for="" id="cantidadiSalami" style="display:none">0</label></td>
                     </tr>
-                    <label for="" id="cantidadiSalami" style="display: none;">0</label>
-
                 </table>
+                <br>
                 <!--Boton enviar y reset-->
                 <div id="botonesResetEnviar">
                     <button id="reset" onclick="reset()" class="buttonBig">Volver a iniciar</button>
@@ -208,6 +209,40 @@
         var vSalsa = document.getElementById("vSalsa");
         var selectSalsa = document.getElementById("selectSalsa");
 
+        function inicio() {
+            //Establecer el tamaño del visor interactivo dependiendo del tamaño de la pantalla del usuario
+            var anchoPantalla = document.documentElement.clientWidth;
+
+            if (anchoPantalla < 950) {
+
+                document.getElementById("vMasa").style.marginLeft = (anchoPantalla - 290) / 2 + "px";
+                document.getElementById("vMasa").style.marginRight = (anchoPantalla - 290) / 2 + "px";
+                document.getElementById("vSalsa").style.marginLeft = (anchoPantalla - 290) / 2 + "px";
+                document.getElementById("vSalsa").style.marginRight = (anchoPantalla - 290) / 2 + "px";
+                document.getElementById("vQueso").style.marginLeft = (anchoPantalla - 290) / 2 + "px";
+                document.getElementById("vQueso").style.marginRight = (anchoPantalla - 290) / 2 + "px";
+                document.getElementById("ingrediente1").style.marginLeft = (anchoPantalla - 290) / 2 + "px";
+                document.getElementById("ingrediente1").style.marginRight = (anchoPantalla - 290) / 2 + "px";
+                document.getElementById("ingrediente2").style.marginLeft = (anchoPantalla - 290) / 2 + "px";
+                document.getElementById("ingrediente2").style.marginRight = (anchoPantalla - 290) / 2 + "px";
+                document.getElementById("ingrediente3").style.marginLeft = (anchoPantalla - 290) / 2 + "px";
+                document.getElementById("ingrediente3").style.marginRight = (anchoPantalla - 290) / 2 + "px";
+                document.getElementById("ingrediente4").style.marginLeft = (anchoPantalla - 290) / 2 + "px";
+                document.getElementById("ingrediente4").style.marginRight = (anchoPantalla - 290) / 2 + "px";
+                document.getElementById("ingrediente5").style.marginLeft = (anchoPantalla - 290) / 2 + "px";
+                document.getElementById("ingrediente5").style.marginRight = (anchoPantalla - 290) / 2 + "px";
+
+            } else {
+                document.getElementById("vMasa").style.marginLeft = 8 + "%";
+                document.getElementById("vSalsa").style.marginLeft = 8 + "%";
+                document.getElementById("vQueso").style.marginLeft = 8 + "%";
+                document.getElementById("ingrediente1").style.marginLeft = 8 + "%";
+                document.getElementById("ingrediente2").style.marginLeft = 8 + "%";
+                document.getElementById("ingrediente3").style.marginLeft = 8 + "%";
+                document.getElementById("ingrediente4").style.marginLeft = 8 + "%";
+                document.getElementById("ingrediente5").style.marginLeft = 8 + "%";
+            }
+        }
         // Función resetear la selección
         function reset() {
             var reset = confirm("¿Seguro que desea eliminar la pizza y volver a empezar?");
@@ -252,6 +287,7 @@
                         cantidad = 2;
                     } else if (cantidad === 2) {
                         alert("Solo puedes añadir dos veces el mismo producto.");
+                        return;
                     }
 
                     document.getElementById("cantidad" + e).innerHTML = cantidad;
