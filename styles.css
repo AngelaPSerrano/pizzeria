@@ -113,3 +113,95 @@ footer {
 .gridConocenos-item h3 {
     margin-top: 0px;
 }
+
+
+/*A BORRAR*/
+
+#interiorMenuSelectores {
+    text-align: center;
+}
+
+.imgVisorInteractivo {
+    position: absolute;
+    height: auto;
+    width: 400px;
+}
+
+#botonesResetEnviar {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+table {
+    text-align: center;
+    padding-left: auto;
+    display: inline-block;
+}
+
+.buttonBig {
+    border-radius: 12px;
+    cursor: pointer;
+    background-color: rgb(255, 67, 67);
+    color: white;
+    border: none;
+    padding: 8px;
+    font-size: 18px;
+    margin: 10px;
+}
+
+td button {
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: rgb(255, 67, 67);
+    color: white;
+    width: 25px;
+    height: 25px;
+    border: none;
+    padding: auto;
+    font-size: 18px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    flex: 100%;
+}
+
+#visorInteractivo {
+    float: left;
+    flex: 50%;
+}
+
+#menuSelectores {
+    float: right;
+    flex: 25%;
+}
+
+.columnaDerecha {
+    background-color: rgb(255, 67, 67);
+    float: right;
+    flex: 25%;
+}
+
+@media screen and (max-width: 950px) {
+    .imgVisorInteractivo {
+        height: 290px;
+        width: auto;
+    }
+    #menuSelectores {
+        width: 100%;
+        margin-top: 300px;
+        flex: 100%;
+    }
+    #visorInteractivo {
+        width: 100%;
+        flex: 100%;
+    }
+    .columnaDerecha {
+        width: 100%;
+        flex: 100%;
+    }
+    .container {
+        flex-direction: column;
+    }
+}
