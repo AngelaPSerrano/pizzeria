@@ -8,15 +8,30 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
     <title>Document</title>
     <style>
+        /* Estos estilos están aquí temporalmente, posteriormente se trasladarán a la hoja de estilos */
+        
+        #interiorMenuSelectores {
+            text-align: center;
+        }
+        
         .imgVisorInteractivo {
             position: absolute;
             height: auto;
-            margin: 0 5%;
-            width: 40%;
+            margin-left: 6%;
+            margin-right: 8%;
+            width: 400px;
+            margin-right: 66%;
+        }
+        
+        #botonesResetEnviar {
+            display: inline-block;
+            margin-top: 20px;
         }
         
         table {
             text-align: center;
+            padding-left: auto;
+            display: inline-block;
         }
         
         .buttonBig {
@@ -27,6 +42,7 @@
             border: none;
             padding: 8px;
             font-size: 18px;
+            margin: 10px;
         }
         
         td button {
@@ -41,24 +57,49 @@
             font-size: 18px;
         }
         
-        #menuSelectores {
-            flex: 25%;
+        .container {
+            display: flex;
+            flex-direction: row;
+            flex: 100%;
         }
         
         #visorInteractivo {
+            float: left;
             flex: 50%;
         }
         
-        @media screen and (max-width: 500px) {
+        #menuSelectores {
+            float: right;
+            flex: 25%;
+        }
+        
+        .columnaDerecha {
+            background-color: rgb(255, 67, 67);
+            float: right;
+            flex: 25%;
+        }
+        
+        @media screen and (max-width: 950px) {
             .imgVisorInteractivo {
-                width: 60%;
+                height: 290px;
+                width: auto;
+                margin-left: 25%;
             }
             #menuSelectores {
-                flex: 100%;
+                width: 100%;
                 margin-top: 300px;
+                flex: 100%;
             }
             #visorInteractivo {
+                width: 100%;
                 flex: 100%;
+            }
+            .columnaDerecha {
+                width: 100%;
+                flex: 100%;
+            }
+            .container {
+                flex-direction: column;
             }
         }
     </style>
@@ -76,11 +117,11 @@
         <a class="active">Pedidos</a>
         <a href="inicio.html">Inicio</a>
     </nav>
-
-    <section class="contenido leftcolumn">
+    <section class="contenido container">
 
         <!-- Visor interactivo -->
         <div id="visorInteractivo">
+
             <img src="img\\capas\\masa.png" alt="" id="vMasa" class="imgVisorInteractivo">
             <img src="img\\capas\\sTomate.png" alt="" id="vSalsa" class="imgVisorInteractivo">
             <img src="img\\capas\\queso.png" alt="" id="vQueso" class="imgVisorInteractivo">
@@ -89,67 +130,72 @@
             <img src="img\\capas\\none.png" name="true" alt="" id="ingrediente3" class="imgVisorInteractivo">
             <img src="img\\capas\\none.png" name="true" alt="" id="ingrediente4" class="imgVisorInteractivo">
             <img src="img\\capas\\none.png" name="true" alt="" id="ingrediente5" class="imgVisorInteractivo">
+
         </div>
 
         <!-- Selectores de salsa -->
-        <div id="menuSelectores">
-            <select name="salsa" id="selectSalsa">
+        <div id="menuSelectores" style="background-color: bisque">
+            <div id="interiorMenuSelectores">
+                <select name="salsa" id="selectSalsa">
             <option value="sTomate">Salsa de Tomate</option>
             <option value="sCarbonara">Salsa Carbonara</option>
             <option value="sBarbacoa">Salsa Barbacoa</option>
         </select>
-            <button onclick="cambioSalsa()" class="buttonBig">Seleccionar salsa</button>
-            <!-- Botones ingredientes -->
-            <table>
-                <tr>
-                    <td><button name="iTomate" id="iTomate-1" onclick="quitarIngrediente('iTomate')">-</button></td>
-                    <td><label for="">Tomate natural</label></td>
-                    <td><button name="iTomate" id="iTomate+1" onclick="añadirIngrediente('iTomate')">+</button></td>
-                </tr>
-                <label for="" id="cantidadiTomate" style="display: none;">0</label>
-                <br>
-                <tr>
-                    <td><button name="iTernera" id="iTernera-1" onclick="quitarIngrediente('iTernera')">-</button></td>
-                    <td><label for="">Ternera picada</label></td>
-                    <td><button name="iTernera" id="iTernera+1" onclick="añadirIngrediente('iTernera')">+</button></td>
-                </tr>
-                <label for="" id="cantidadiTernera" style="display: none;">0</label>
-                <br>
-                <tr>
-                    <td><button name="iPollo" id="iPollo-1" onclick="quitarIngrediente('iPollo')">-</button></td>
-                    <td><label for="">Pollo braseado</label></td>
-                    <td><button name="iPollo" id="iPollo+1" onclick="añadirIngrediente('iPollo')">+</button></td>
-                </tr>
-                <label for="" id="cantidadiPollo" style="display: none;">0</label>
+                <button onclick="cambioSalsa()" class="buttonBig">Seleccionar salsa</button>
+                <!-- Botones ingredientes -->
+                <table>
+                    <tr>
+                        <td><button name="iTomate" id="iTomate-1" onclick="quitarIngrediente('iTomate')">-</button></td>
+                        <td><label for="">Tomate natural</label></td>
+                        <td><button name="iTomate" id="iTomate+1" onclick="añadirIngrediente('iTomate')">+</button></td>
+                    </tr>
+                    <label for="" id="cantidadiTomate" style="display: none;">0</label>
+                    <br>
+                    <tr>
+                        <td><button name="iTernera" id="iTernera-1" onclick="quitarIngrediente('iTernera')">-</button></td>
+                        <td><label for="">Ternera picada</label></td>
+                        <td><button name="iTernera" id="iTernera+1" onclick="añadirIngrediente('iTernera')">+</button></td>
+                    </tr>
+                    <label for="" id="cantidadiTernera" style="display: none;">0</label>
+                    <br>
+                    <tr>
+                        <td><button name="iPollo" id="iPollo-1" onclick="quitarIngrediente('iPollo')">-</button></td>
+                        <td><label for="">Pollo braseado</label></td>
+                        <td><button name="iPollo" id="iPollo+1" onclick="añadirIngrediente('iPollo')">+</button></td>
+                    </tr>
+                    <label for="" id="cantidadiPollo" style="display: none;">0</label>
 
-                <br>
-                <tr>
-                    <td><button name="iChampis" id="iChampis-1" onclick="quitarIngrediente('iChampis')">-</button></td>
-                    <td><label for="">Champiñones</label></td>
-                    <td><button name="iChampis" id="iChampis+1" onclick="añadirIngrediente('iChampis')">+</button></td>
-                </tr>
-                <label for="" id="cantidadiChampis" style="display: none;">0</label>
-                <br>
-                <tr>
-                    <td><button name="iPimiento" id="iPimiento-1" onclick="quitarIngrediente('iPimiento')">-</button></td>
-                    <td><label for="">Pimiento</label></td>
-                    <td><button name="iPimiento" id="iPimiento+1" onclick="añadirIngrediente('iPimiento')">+</button></td>
-                </tr>
-                <label for="" id="cantidadiPimiento" style="display: none;">0</label>
-                <br>
-                <tr>
-                    <td><button name="iSalami" id="iSalami-1" onclick="quitarIngrediente('iSalami')">-</button></td>
-                    <td><label for="">Salami</label></td>
-                    <td><button name="iSalami" id="iSalami+1" onclick="añadirIngrediente('iSalami')">+</button></td>
-                </tr>
-                <label for="" id="cantidadiSalami" style="display: none;">0</label>
+                    <br>
+                    <tr>
+                        <td><button name="iChampis" id="iChampis-1" onclick="quitarIngrediente('iChampis')">-</button></td>
+                        <td><label for="">Champiñones</label></td>
+                        <td><button name="iChampis" id="iChampis+1" onclick="añadirIngrediente('iChampis')">+</button></td>
+                    </tr>
+                    <label for="" id="cantidadiChampis" style="display: none;">0</label>
+                    <br>
+                    <tr>
+                        <td><button name="iPimiento" id="iPimiento-1" onclick="quitarIngrediente('iPimiento')">-</button></td>
+                        <td><label for="">Pimiento</label></td>
+                        <td><button name="iPimiento" id="iPimiento+1" onclick="añadirIngrediente('iPimiento')">+</button></td>
+                    </tr>
+                    <label for="" id="cantidadiPimiento" style="display: none;">0</label>
+                    <br>
+                    <tr>
+                        <td><button name="iSalami" id="iSalami-1" onclick="quitarIngrediente('iSalami')">-</button></td>
+                        <td><label for="">Salami</label></td>
+                        <td><button name="iSalami" id="iSalami+1" onclick="añadirIngrediente('iSalami')">+</button></td>
+                    </tr>
+                    <label for="" id="cantidadiSalami" style="display: none;">0</label>
 
-            </table>
-            <!--Boton enviar y reset-->
-            <button id="reset" onclick="reset()" class="buttonBig">Volver a iniciar</button><br>
-            <button id="enviar" onclick="enviar()" class="buttonBig">Finalizar pizza</button>
+                </table>
+                <!--Boton enviar y reset-->
+                <div id="botonesResetEnviar">
+                    <button id="reset" onclick="reset()" class="buttonBig">Volver a iniciar</button>
+                    <button id="enviar" onclick="enviar()" class="buttonBig">Finalizar pizza</button>
+                </div>
+            </div>
         </div>
-        <div class="rightColumn">
+        <div class="columnaDerecha ">
             <h3>Tu pedido</h3>
         </div>
 
@@ -161,13 +207,8 @@
     <script>
         var vSalsa = document.getElementById("vSalsa");
         var selectSalsa = document.getElementById("selectSalsa");
-        /*var cantidadListado = {
-            1:1,
-            2:2,
-            3:3,
-            4:4,
-            5:5
-        }*/
+
+        // Función resetear la selección
         function reset() {
             var reset = confirm("¿Seguro que desea eliminar la pizza y volver a empezar?");
             if (reset === true) {
@@ -189,10 +230,12 @@
             }
         }
 
+        //Función cambio de imagen de la salsa
         function cambioSalsa() {
             vSalsa.src = "img\\capas\\" + selectSalsa.value + ".png";
         }
 
+        //Función añadir ingredientes. El argumento que se le pasa es el nombre del ingrediente
         function añadirIngrediente(e) {
             for (i = 1; i <= 5; i++) {
                 var ingrediente = document.getElementById("ingrediente" + i);
@@ -218,6 +261,7 @@
             alert("Límite de ingredientes alcanzado. Elimina un ingrediente.");
         }
 
+        //Función quitar ingredientes. El argumento que se le pasa es el nombre del ingrediente
         function quitarIngrediente(e) {
 
             for (i = 1; i <= 5; i++) {
