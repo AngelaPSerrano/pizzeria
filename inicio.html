@@ -9,8 +9,10 @@
 </head>
 <body>
     <header>
-        <p>Pizzería</p>
-        <h1>Verona</h1>
+        <div>
+            <p>Pizzería</p>
+            <h1>Verona</h1>
+        </div>
     </header>
 
     <nav class="navbar">
@@ -27,20 +29,19 @@
             <img class="imgSlide" src="img/p3.jpg" width="100%">
             <img class="imgSlide" src="img/p4.jpg" width="100%">
         </div>
-        <div class="grid-container">
-            <a class="grid-item" href="pedidos.html">
+        <div class="gridInicio-container">
+            <a class="gridInicio-item" href="pedidos.html">
                 <img src="img/pizzas/iberica.jpg" alt="" height="200" width="250">
-                <h2>Ofertas especiales</h2>
+                <h2 class="seccion">OFERTAS ESPECIALES</h2>
             </a>
-            <a class="grid-item" href="#">
+            <a class="gridInicio-item" href="#">
                 <img src="img/pizza.png" alt="" height="200" width="200">
-                <h2>Crea tu pizza</h2>
+                <h2 class="seccion">CREA TU PIZZA</h2>
             </a>
-            <a class="grid-item" href="contacto.html">
+            <a class="gridInicio-item" href="contacto.html">
                 <img src="img/maps.png" alt="" height="200" width="200">
-                <h2>Dónde estamos</h2>
+                <h2 class="seccion">DÓNDE ESTAMOS</h2>
             </a>
-
         </div>
     </section>
 
@@ -61,7 +62,7 @@
     slideIndex++;
     if (slideIndex > x.length) {slideIndex = 1} 
     x[slideIndex-1].style.display = "block"; 
-    setTimeout(carousel, 2000);
+    setTimeout(carousel, 3000);
     }
     </script>
 </body>
