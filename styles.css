@@ -1,0 +1,140 @@
+
+/* Comunes */
+* {
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+body {
+    background-color: #e1e1e1;
+}
+header {
+    background-color: red;
+    color: white;
+    padding: 20px;
+    height: 150px;
+    position: relative;
+    font-style: italic;
+}
+header div {
+    position: absolute;
+    bottom: 15px;
+}
+header h1 {
+    margin: 0px;
+    font-size: 50px;
+}
+header p {
+    padding-left: 5px;
+    margin: 0px;
+    font-size: 25px;
+}
+nav {
+    background-color: black;
+    overflow: hidden;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    float: right;
+}
+nav a:hover {
+    background-color: darkgrey;
+    color: black;
+}
+nav a.active {
+    background: lightgray;
+    color: black;
+}
+footer {
+    background-color: red;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+.seccion {
+    border-bottom: 3px solid red;
+    padding: 10px;
+    background-color: white;
+    margin: 0px;
+}
+
+/* Página 'Inicio */
+.gridInicio-container {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    margin: 10px auto;
+}
+.gridInicio-item {
+    display: inline-block;
+    width: 33%;
+    padding-top: 10px;
+    text-align: center;
+    background-color: white;
+    color: black;
+    text-decoration: none;
+}
+
+/* Página 'Pedidos' */
+.contenido {
+    display: flex;
+    width: 90%;
+    padding: 0px;
+    margin: 10px auto 0px auto;
+}
+.leftColumn {
+    flex: 75%;
+    padding-right: 20px;
+}
+.grid-container {
+    display: grid;
+    grid: auto / auto auto auto;
+    grid-row-gap: 5px;
+    margin-bottom: 10px;
+}
+.grid-item {
+    padding: 10px;
+    text-align: center;
+    background-color: white;
+}
+.grid-item img {
+    display: block;
+    margin: 20px auto;
+}
+.rightColumn {
+    flex: 25%;
+}
+
+/* Carro de la compra */
+.pedidoGrid {
+    display: none;
+    grid: auto / 15% 45% 20% 20%;
+    border: 1px solid black;
+    padding: 5px 0px;
+    margin: 2px 0px;
+    background-color: white;
+}
+.pedidoGrid-item {
+    text-align: center;
+}
+
+/* Página 'Conócenos' */
+.gridConocenos {
+    flex: 100%;
+    display: grid;
+    grid: auto / 195px auto;
+    background-color: #e1e1e1;
+    margin-bottom: 10px;
+    grid-row-gap: 5px;
+}
+.gridConocenos-item {
+    padding: 15px 0px 15px 15px;
+    background-color: white;
+}
+.seccionConocenos {
+    border-bottom: 3px solid red;
+    padding-bottom: 10px;
+    background-color: white;
+    margin: 0px;
+}
