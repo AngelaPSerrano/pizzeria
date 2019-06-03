@@ -157,6 +157,7 @@
     <script>
         var ocultarTiendas = document.getElementsByClassName("ciudad");
         var ocultarMapas = document.getElementsByClassName("mapa");
+        var colorTiendas = document.getElementsByClassName("tienda");
         function ciudades() {
             city = document.getElementById("locales").value;
             if (city == 'Madrid') {
@@ -199,121 +200,241 @@
             for (var i = 0; i < ocultarMapas.length; i++) {
                 ocultarMapas[i].style.display="none";
             }
+            for (var i = 0; i < colorTiendas.length; i++) {
+                colorTiendas[i].style.backgroundColor = '#f1f1f1';
+                colorTiendas[i].style.color = 'black';
+            }
             document.getElementById("mapam1").style.display = 'block';
+            document.getElementById("m1").style.backgroundColor = '#3333ff';
+            document.getElementById("m1").style.color = 'white';
         }
         function verm2() {
             for (var i = 0; i < ocultarMapas.length; i++) {
                 ocultarMapas[i].style.display="none";
             }
+            for (var i = 0; i < colorTiendas.length; i++) {
+                colorTiendas[i].style.backgroundColor = '#f1f1f1';
+                colorTiendas[i].style.color = 'black';
+            }
             document.getElementById("mapam2").style.display = 'block';
+            document.getElementById("m2").style.backgroundColor = '#3333ff';
+            document.getElementById("m2").style.color = 'white';
         }
         function verm3() {
             for (var i = 0; i < ocultarMapas.length; i++) {
                 ocultarMapas[i].style.display="none";
             }
+            for (var i = 0; i < colorTiendas.length; i++) {
+                colorTiendas[i].style.backgroundColor = '#f1f1f1';
+                colorTiendas[i].style.color = 'black';
+            }
             document.getElementById("mapam3").style.display = 'block';
+            document.getElementById("m3").style.backgroundColor = '#3333ff';
+            document.getElementById("m3").style.color = 'white';
         }
         function verm4() {
             for (var i = 0; i < ocultarMapas.length; i++) {
                 ocultarMapas[i].style.display="none";
             }
+            for (var i = 0; i < colorTiendas.length; i++) {
+                colorTiendas[i].style.backgroundColor = '#f1f1f1';
+                colorTiendas[i].style.color = 'black';
+            }
             document.getElementById("mapam4").style.display = 'block';
+            document.getElementById("m4").style.backgroundColor = '#3333ff';
+            document.getElementById("m4").style.color = 'white';
         }
         function verb1() {
             for (var i = 0; i < ocultarMapas.length; i++) {
                 ocultarMapas[i].style.display="none";
             }
+            for (var i = 0; i < colorTiendas.length; i++) {
+                colorTiendas[i].style.backgroundColor = '#f1f1f1';
+                colorTiendas[i].style.color = 'black';
+            }
             document.getElementById("mapab1").style.display = 'block';
+            document.getElementById("b1").style.backgroundColor = '#3333ff';
+            document.getElementById("b1").style.color = 'white';
         }
         function verb2() {
             for (var i = 0; i < ocultarMapas.length; i++) {
                 ocultarMapas[i].style.display="none";
             }
+            for (var i = 0; i < colorTiendas.length; i++) {
+                colorTiendas[i].style.backgroundColor = '#f1f1f1';
+                colorTiendas[i].style.color = 'black';
+            }
             document.getElementById("mapab2").style.display = 'block';
+            document.getElementById("b2").style.backgroundColor = '#3333ff';
+            document.getElementById("b2").style.color = 'white';
         }
         function verb3() {
             for (var i = 0; i < ocultarMapas.length; i++) {
                 ocultarMapas[i].style.display="none";
             }
+            for (var i = 0; i < colorTiendas.length; i++) {
+                colorTiendas[i].style.backgroundColor = '#f1f1f1';
+                colorTiendas[i].style.color = 'black';
+            }
             document.getElementById("mapab3").style.display = 'block';
+            document.getElementById("b3").style.backgroundColor = '#3333ff';
+            document.getElementById("b3").style.color = 'white';
         }
         function verb4() {
             for (var i = 0; i < ocultarMapas.length; i++) {
                 ocultarMapas[i].style.display="none";
             }
+            for (var i = 0; i < colorTiendas.length; i++) {
+                colorTiendas[i].style.backgroundColor = '#f1f1f1';
+                colorTiendas[i].style.color = 'black';
+            }
             document.getElementById("mapab4").style.display = 'block';
+            document.getElementById("b4").style.backgroundColor = '#3333ff';
+            document.getElementById("b4").style.color = 'white';
         }
         function vers1() {
             for (var i = 0; i < ocultarMapas.length; i++) {
                 ocultarMapas[i].style.display="none";
             }
+            for (var i = 0; i < colorTiendas.length; i++) {
+                colorTiendas[i].style.backgroundColor = '#f1f1f1';
+                colorTiendas[i].style.color = 'black';
+            }
             document.getElementById("mapas1").style.display = 'block';
+            document.getElementById("s1").style.backgroundColor = '#3333ff';
+            document.getElementById("s1").style.color = 'white';
         }
         function vers2() {
             for (var i = 0; i < ocultarMapas.length; i++) {
                 ocultarMapas[i].style.display="none";
             }
+            for (var i = 0; i < colorTiendas.length; i++) {
+                colorTiendas[i].style.backgroundColor = '#f1f1f1';
+                colorTiendas[i].style.color = 'black';
+            }
             document.getElementById("mapas2").style.display = 'block';
+            document.getElementById("s2").style.backgroundColor = '#3333ff';
+            document.getElementById("s2").style.color = 'white';
         }
         function vers3() {
             for (var i = 0; i < ocultarMapas.length; i++) {
                 ocultarMapas[i].style.display="none";
             }
+            for (var i = 0; i < colorTiendas.length; i++) {
+                colorTiendas[i].style.backgroundColor = '#f1f1f1';
+                colorTiendas[i].style.color = 'black';
+            }
             document.getElementById("mapas3").style.display = 'block';
+            document.getElementById("s3").style.backgroundColor = '#3333ff';
+            document.getElementById("s3").style.color = 'white';
         }
         function vers4() {
             for (var i = 0; i < ocultarMapas.length; i++) {
                 ocultarMapas[i].style.display="none";
             }
+            for (var i = 0; i < colorTiendas.length; i++) {
+                colorTiendas[i].style.backgroundColor = '#f1f1f1';
+                colorTiendas[i].style.color = 'black';
+            }
             document.getElementById("mapas4").style.display = 'block';
+            document.getElementById("s4").style.backgroundColor = '#3333ff';
+            document.getElementById("s4").style.color = 'white';
         }
         function verv1() {
             for (var i = 0; i < ocultarMapas.length; i++) {
                 ocultarMapas[i].style.display="none";
             }
+            for (var i = 0; i < colorTiendas.length; i++) {
+                colorTiendas[i].style.backgroundColor = '#f1f1f1';
+                colorTiendas[i].style.color = 'black';
+            }
             document.getElementById("mapav1").style.display = 'block';
+            document.getElementById("v1").style.backgroundColor = '#3333ff';
+            document.getElementById("v1").style.color = 'white';
         }
         function verv2() {
             for (var i = 0; i < ocultarMapas.length; i++) {
                 ocultarMapas[i].style.display="none";
             }
+            for (var i = 0; i < colorTiendas.length; i++) {
+                colorTiendas[i].style.backgroundColor = '#f1f1f1';
+                colorTiendas[i].style.color = 'black';
+            }
             document.getElementById("mapav2").style.display = 'block';
+            document.getElementById("v2").style.backgroundColor = '#3333ff';
+            document.getElementById("v2").style.color = 'white';
         }
         function verv3() {
             for (var i = 0; i < ocultarMapas.length; i++) {
                 ocultarMapas[i].style.display="none";
             }
+            for (var i = 0; i < colorTiendas.length; i++) {
+                colorTiendas[i].style.backgroundColor = '#f1f1f1';
+                colorTiendas[i].style.color = 'black';
+            }
             document.getElementById("mapav3").style.display = 'block';
+            document.getElementById("v3").style.backgroundColor = '#3333ff';
+            document.getElementById("v3").style.color = 'white';
         }
         function verv4() {
             for (var i = 0; i < ocultarMapas.length; i++) {
                 ocultarMapas[i].style.display="none";
             }
+            for (var i = 0; i < colorTiendas.length; i++) {
+                colorTiendas[i].style.backgroundColor = '#f1f1f1';
+                colorTiendas[i].style.color = 'black';
+            }
             document.getElementById("mapav4").style.display = 'block';
+            document.getElementById("v4").style.backgroundColor = '#3333ff';
+            document.getElementById("v4").style.color = 'white';
         }
         function verz1() {
             for (var i = 0; i < ocultarMapas.length; i++) {
                 ocultarMapas[i].style.display="none";
             }
+            for (var i = 0; i < colorTiendas.length; i++) {
+                colorTiendas[i].style.backgroundColor = '#f1f1f1';
+                colorTiendas[i].style.color = 'black';
+            }
             document.getElementById("mapaz1").style.display = 'block';
+            document.getElementById("z1").style.backgroundColor = '#3333ff';
+            document.getElementById("z1").style.color = 'white';
         }
         function verz2() {
             for (var i = 0; i < ocultarMapas.length; i++) {
                 ocultarMapas[i].style.display="none";
             }
+            for (var i = 0; i < colorTiendas.length; i++) {
+                colorTiendas[i].style.backgroundColor = '#f1f1f1';
+                colorTiendas[i].style.color = 'black';
+            }
             document.getElementById("mapaz2").style.display = 'block';
+            document.getElementById("z2").style.backgroundColor = '#3333ff';
+            document.getElementById("z2").style.color = 'white';
         }
         function verz3() {
             for (var i = 0; i < ocultarMapas.length; i++) {
                 ocultarMapas[i].style.display="none";
             }
+            for (var i = 0; i < colorTiendas.length; i++) {
+                colorTiendas[i].style.backgroundColor = '#f1f1f1';
+                colorTiendas[i].style.color = 'black';
+            }
             document.getElementById("mapaz3").style.display = 'block';
+            document.getElementById("z3").style.backgroundColor = '#3333ff';
+            document.getElementById("z3").style.color = 'white';
         }
         function verz4() {
             for (var i = 0; i < ocultarMapas.length; i++) {
                 ocultarMapas[i].style.display="none";
             }
+            for (var i = 0; i < colorTiendas.length; i++) {
+                colorTiendas[i].style.backgroundColor = '#f1f1f1';
+                colorTiendas[i].style.color = 'black';
+            }
             document.getElementById("mapaz4").style.display = 'block';
+            document.getElementById("z4").style.backgroundColor = '#3333ff';
+            document.getElementById("z4").style.color = 'white';
         }
     </script>
 </body>
