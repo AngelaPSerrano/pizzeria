@@ -93,10 +93,6 @@
                 width: 100%;
                 flex: 100%;
             }
-            .columnaDerecha {
-                width: 100%;
-                flex: 100%;
-            }
             .container {
                 flex-direction: column;
             }
@@ -113,7 +109,7 @@
     <nav class="navbar">
         <a href="contacto.html">Contacto</a>
         <a href="conocenos.html">Conócenos</a>
-        <a class="active">Pedidos</a>
+        <a href="pedidos.html" class="active">Pedidos</a>
         <a href="inicio.html">Inicio</a>
     </nav>
     <section class="contenido container">
@@ -196,10 +192,93 @@
                 </div>
             </div>
         </div>
-        <div class="columnaDerecha ">
-            <h3>Tu pedido</h3>
+        <div class="rightColumn">
+            <h3 class="seccion">Tu pedido</h3>
+            <div id="tituloCarro" class="pedidoGrid">
+                <div class="pedidoGrid-item"></div>
+                <div class="pedidoGrid-item">Producto</div>
+                <div class="pedidoGrid-item">Cantidad</div>
+                <div class="pedidoGrid-item">Precio</div>
+            </div>
+            <div id="ibericaCarro" class="pedidoGrid">
+                <img src="img/pizzas/iberica.jpg" alt="" height="40" width="50" class="pedidoGrid-item">
+                <div class="pedidoGrid-item">Pizza ibérica</div>
+                <div id="ibericaCant" class="pedidoGrid-item"></div>
+                <div id="ibericaPrecio" class="pedidoGrid-item"></div>
+            </div>
+            <div id="barbacoaCarro" class="pedidoGrid">
+                <img src="img/pizzas/barbacoa.jpg" alt="" height="40" width="50" class="pedidoGrid-item">
+                <div class="pedidoGrid-item">Pizza barbacoa</div>
+                <div id="barbacoaCant" class="pedidoGrid-item"></div>
+                <div id="barbacoaPrecio" class="pedidoGrid-item"></div>
+            </div>
+            <div id="mediterraneaCarro" class="pedidoGrid">
+                <img src="img/pizzas/mediterranea.jpg" alt="" height="40" width="50" class="pedidoGrid-item">
+                <div class="pedidoGrid-item">Pizza mediterránea</div>
+                <div id="mediterraneaCant" class="pedidoGrid-item"></div>
+                <div id="mediterraneaPrecio" class="pedidoGrid-item"></div>
+            </div>
+            <div id="yorkCarro" class="pedidoGrid">
+                <img src="img/pizzas/york.jpg" alt="" height="40" width="50" class="pedidoGrid-item">
+                <div class="pedidoGrid-item">Pizza york</div>
+                <div id="yorkCant" class="pedidoGrid-item"></div>
+                <div id="yorkPrecio" class="pedidoGrid-item"></div>
+            </div>
+            <div id="carbonaraCarro" class="pedidoGrid">
+                <img src="img/pizzas/carbonara.jpg" alt="" height="40" width="50" class="pedidoGrid-item">
+                <div class="pedidoGrid-item">Pizza carbonara</div>
+                <div id="carbonaraCant" class="pedidoGrid-item"></div>
+                <div id="carbonaraPrecio" class="pedidoGrid-item"></div>
+            </div>
+            <div id="hawaianaCarro" class="pedidoGrid">
+                <img src="img/pizzas/hawaiana.jpg" alt="" height="40" width="50" class="pedidoGrid-item">
+                <div class="pedidoGrid-item">Pizza hawaiana</div>
+                <div id="hawaianaCant" class="pedidoGrid-item"></div>
+                <div id="hawaianaPrecio" class="pedidoGrid-item"></div>
+            </div>
+            <div id="4quesosCarro" class="pedidoGrid">
+                <img src="img/pizzas/4quesos.jpg" alt="" height="40" width="50" class="pedidoGrid-item">
+                <div class="pedidoGrid-item">Pizza 4 quesos</div>
+                <div id="4quesosCant" class="pedidoGrid-item"></div>
+                <div id="4quesosPrecio" class="pedidoGrid-item"></div>
+            </div>
+            <div id="vegetalCarro" class="pedidoGrid">
+                <img src="img/pizzas/vegetal.jpg" alt="" height="40" width="50" class="pedidoGrid-item">
+                <div class="pedidoGrid-item">Pizza vegetal</div>
+                <div id="vegetalCant" class="pedidoGrid-item"></div>
+                <div id="vegetalPrecio" class="pedidoGrid-item"></div>
+            </div>
+            <div id="4estacionesCarro" class="pedidoGrid">
+                <img src="img/pizzas/4estaciones.jpg" alt="" height="40" width="50" class="pedidoGrid-item">
+                <div class="pedidoGrid-item">Pizza 4 estaciones</div>
+                <div id="4estacionesCant" class="pedidoGrid-item"></div>
+                <div id="4estacionesPrecio" class="pedidoGrid-item"></div>
+            </div>
+            <div id="cocacolaCarro" class="pedidoGrid">
+                <img src="img/cocacola.jpg" alt="" height="40" width="40" class="pedidoGrid-item">
+                <div class="pedidoGrid-item">Coca-cola</div>
+                <div id="cocacolaCant" class="pedidoGrid-item"></div>
+                <div id="cocacolaPrecio" class="pedidoGrid-item"></div>
+            </div>
+            <div id="fnaranjaCarro" class="pedidoGrid">
+                <img src="img/fantanaranja.jpg" alt="" height="40" width="40" class="pedidoGrid-item">
+                <div class="pedidoGrid-item">Fanta naranja</div>
+                <div id="fnaranjaCant" class="pedidoGrid-item"></div>
+                <div id="fnaranjaPrecio" class="pedidoGrid-item"></div>
+            </div>
+            <div id="flimonCarro" class="pedidoGrid">
+                <img src="img/fantalimon.jpg" alt="" height="40" width="40" class="pedidoGrid-item">
+                <div class="pedidoGrid-item">Fanta limón</div>
+                <div id="flimonCant" class="pedidoGrid-item"></div>
+                <div id="flimonPrecio" class="pedidoGrid-item"></div>
+            </div>
+            <div id="finalCarro" class="pedidoGrid">
+                <div class="pedidoGrid-item">Total</div>
+                <div class="pedidoGrid-item"></div>
+                <div class="pedidoGrid-item"></div>
+                <div id="precioTotal" class="pedidoGrid-item"></div>
+            </div>
         </div>
-
     </section>
 
     <footer>
