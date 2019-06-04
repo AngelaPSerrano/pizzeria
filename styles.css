@@ -117,14 +117,64 @@ footer {
 /* Carro de la compra */
 .pedidoGrid {
     display: none;
-    grid: auto / 15% 45% 20% 20%;
-    border: 1px solid black;
-    padding: 5px 0px;
-    margin: 2px 0px;
+    grid: 32px 48px / 25% 50% 25%;
+    border-bottom: 1px solid black;
     background-color: white;
+    row-gap: 5px;
 }
 .pedidoGrid-item {
     text-align: center;
+    margin: auto;
+}
+.pedidoFinal {
+    display: grid;
+    grid: 40px 50px / 100%;
+    border-bottom: 1px solid black;
+    background-color: white;
+}
+.pedir {
+    grid-column: 1/span 2;
+    grid-row: 2;
+    background-color: red;
+    color: white;
+    width: 70%;
+    height: 30px;
+    margin: 5px auto 15px auto;
+}
+.pedidoImg {
+    grid-column: 1;
+    grid-row: 1/span 2;
+    margin: auto;
+}
+.pedidoPizza {
+    grid-column: 2;
+    grid-row: 1;
+    padding-top: 8px;
+    width: 100%;
+    font-weight: bold;
+    border-bottom: 1px solid red;
+}
+.pedidoEliminar {
+    grid-column: 3;
+    grid-row: 1;
+    padding: 3px;
+    background-color: red;
+    color: white;
+    border-bottom: 1px solid red;
+    width: 100%;
+    font-weight: bold;
+}
+.pedidoCantidad {
+    grid-column: 2;
+    grid-row: 2;
+    margin: auto;
+    width: 100%;
+}
+.pedidoPrecio {
+    grid-column: 3;
+    grid-row: 2;
+    margin: auto;
+    width: 100%;
 }
 
 /* Página 'Conócenos' */
