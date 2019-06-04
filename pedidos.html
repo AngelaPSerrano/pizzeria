@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Pizzeria Verona</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="crearPizza.js"></script>
+    <script src="pedidos.js"></script>
     <style>
 
     </style>
@@ -99,9 +100,11 @@
                     <h3>11,99 €</h3>
                     <p><b>Ingredientes:</b> Alcachofas, jamón dulce, champiñones, mozzarella, tomate</p>
                 </div>
-                <div class="grid-item" id="creaPizza" style="grid-column: 1 / 4">
-                    <h3 class="flip">¡Crea tu propia pizza!</h3>
-                    <div class="panel">
+            </div>
+            <div class="" id="creaPizza">
+                <h3 class="seccion">¡Crea tu propia pizza! (Solo una por pedido)</h3>
+                <div class="grid-container">
+                    <div class="grid-item" style="grid-column: 1 / 4">
                         <section class="contenido container">
 
                             <!-- Visor interactivo -->
@@ -121,73 +124,75 @@
                             <!-- Selectores de salsa -->
                             <div id="menuSelectores" style="background-color: bisque">
                                 <div id="interiorMenuSelectores">
-                                    <select name="salsa" id="selectSalsa">
-                                <option value="sTomate">Salsa de Tomate</option>
-                                <option value="sCarbonara">Salsa Carbonara</option>
-                                <option value="sBarbacoa">Salsa Barbacoa</option>
-                            </select>
-                                    <button onclick="cambioSalsa()" class="buttonBig">Seleccionar salsa</button>
+                                    <!--<select name="salsa" id="selectSalsa">
+                                        <option value="sTomate">Salsa de Tomate</option>
+                                        <option value="sCarbonara">Salsa Carbonara</option>
+                                        <option value="sBarbacoa">Salsa Barbacoa</option>
+                                    </select>
+                                    <button onclick="cambioSalsa()" class="buttonBig">Seleccionar salsa</button>-->
                                     <!-- Botones ingredientes -->
                                     <h3 id="tituloTabla">Selección de ingredientes</h3>
                                     <table id="tablaIngredientes">
                                         <tr>
-                                            <td><button name="iTomate" id="iTomate-1" onclick="quitarIngrediente('iTomate')">-</button></td>
+                                            <td><button name="iTomate" id="iTomate-1" onclick="quitarIngrediente('iTomate')" value=" tomate natural">-</button></td>
                                             <td><label for="">Tomate natural</label></td>
-                                            <td><button name="iTomate" id="iTomate+1" onclick="añadirIngrediente('iTomate')">+</button></td>
+                                            <td><button name="iTomate" id="iTomate+1" onclick="añadirIngrediente('iTomate')" value=" tomate natural">+</button></td>
                                         </tr>
                                         <label for="" id="cantidadiTomate" style="display: none;">0</label>
 
                                         <tr>
-                                            <td><button name="iTernera" id="iTernera-1" onclick="quitarIngrediente('iTernera')">-</button></td>
+                                            <td><button name="iTernera" id="iTernera-1" onclick="quitarIngrediente('iTernera')" value=" ternera picada">-</button></td>
                                             <td><label for="">Ternera picada</label></td>
-                                            <td><button name="iTernera" id="iTernera+1" onclick="añadirIngrediente('iTernera')">+</button></td>
+                                            <td><button name="iTernera" id="iTernera+1" onclick="añadirIngrediente('iTernera')" value=" ternera picada">+</button></td>
                                         </tr>
                                         <label for="" id="cantidadiTernera" style="display: none;">0</label>
 
                                         <tr>
-                                            <td><button name="iPollo" id="iPollo-1" onclick="quitarIngrediente('iPollo')">-</button></td>
+                                            <td><button name="iPollo" id="iPollo-1" onclick="quitarIngrediente('iPollo')" value=" pollo braseado">-</button></td>
                                             <td><label for="">Pollo braseado</label></td>
-                                            <td><button name="iPollo" id="iPollo+1" onclick="añadirIngrediente('iPollo')">+</button></td>
+                                            <td><button name="iPollo" id="iPollo+1" onclick="añadirIngrediente('iPollo')" value=" pollo braseado">+</button></td>
                                         </tr>
                                         <label for="" id="cantidadiPollo" style="display: none;">0</label>
 
 
                                         <tr>
-                                            <td><button name="iChampis" id="iChampis-1" onclick="quitarIngrediente('iChampis')">-</button></td>
+                                            <td><button name="iChampis" id="iChampis-1" onclick="quitarIngrediente('iChampis')" value=" champiñones">-</button></td>
                                             <td><label for="">Champiñones</label></td>
-                                            <td><button name="iChampis" id="iChampis+1" onclick="añadirIngrediente('iChampis')">+</button></td>
+                                            <td><button name="iChampis" id="iChampis+1" onclick="añadirIngrediente('iChampis')" value=" champiñones">+</button></td>
                                         </tr>
                                         <label for="" id="cantidadiChampis" style="display: none;">0</label>
 
                                         <tr>
-                                            <td><button name="iPimiento" id="iPimiento-1" onclick="quitarIngrediente('iPimiento')">-</button></td>
+                                            <td><button name="iPimiento" id="iPimiento-1" onclick="quitarIngrediente('iPimiento')" value=" pimiento">-</button></td>
                                             <td><label for="">Pimiento</label></td>
-                                            <td><button name="iPimiento" id="iPimiento+1" onclick="añadirIngrediente('iPimiento')">+</button></td>
+                                            <td><button name="iPimiento" id="iPimiento+1" onclick="añadirIngrediente('iPimiento')" value=" pimiento">+</button></td>
                                             <label for="" id="cantidadiPimiento" style="display: none;">0</label>
                                         </tr>
 
 
                                         <tr>
-                                            <td><button name="iSalami" id="iSalami-1" onclick="quitarIngrediente('iSalami')">-</button></td>
+                                            <td><button name="iSalami" id="iSalami-1" onclick="quitarIngrediente('iSalami')" value=" salami">-</button></td>
                                             <td><label for="">Salami</label></td>
-                                            <td><button name="iSalami" id="iSalami+1" onclick="añadirIngrediente('iSalami')">+</button></td>
+                                            <td><button name="iSalami" id="iSalami+1" onclick="añadirIngrediente('iSalami')" value=" salami">+</button></td>
                                             <td><label for="" id="cantidadiSalami" style="display:none">0</label></td>
                                         </tr>
                                     </table>
                                     <br>
-                                    <h3>Precio: <span id="precioCreaPizza">9.00</span></h3>
+                                    <h3>Precio: <span id="precioCreaPizza">9</span>€</h3>
+                                    <h3>Ingredientes: </h3>
+                                    <h4><span id="ingredientesCreaPizza">Salsa de tomate, queso</span></h4>
                                     <!--Boton enviar y reset-->
                                     <div id="botonesResetEnviar">
                                         <button id="reset" onclick="reset()" class="buttonBig">Volver a iniciar</button>
-                                        <button id="enviar" onclick="enviarCrearPizza()" class="buttonBig">Finalizar pizza</button>
+                                        <button id="enviar" onclick="addPersonalizada()" class="buttonBig">Finalizar pizza</button>
                                     </div>
                                 </div>
                             </div>
                     </div>
                 </div>
-
-
             </div>
+
+
 
             <h3 class="seccion">BEBIDAS</h3>
             <div class="grid-container">
@@ -213,10 +218,6 @@
         </div>
         <div class="rightColumn">
             <h3 class="seccion">Tu pedido</h3>
-            <div id="finalCarro" class="pedidoFinal">
-                <div id="precioTotal" class="pedidoGrid-item">Precio total: <strong>0 €</strong></div>
-                <button class="pedir">Confirmar pedido</button>
-            </div>
             <div id="ibericaCarro" class="pedidoGrid">
                 <img src="img/pizzas/iberica.jpg" alt="" height="40" width="50" class="pedidoGrid-item pedidoImg">
                 <div class="pedidoGrid-item pedidoPizza">Pizza ibérica</div>
@@ -280,6 +281,13 @@
                 <div id="4estacionesCant" class="pedidoGrid-item pedidoCantidad">Cantidad <input id='4estaciones' type="number" min="1" max="10" value="1" onchange="estacionesCarrito()"></div>
                 <div id="4estacionesPrecio" class="pedidoGrid-item pedidoPrecio"></div>
             </div>
+            <div id="personalizada1Carro" class="pedidoGrid">
+                <img src="img/pizzas/miniaturaPersonalizada.png" alt="" height="40" width="50" class="pedidoGrid-item pedidoImg">
+                <div class="pedidoGrid-item pedidoPizza">Pizza Personalizada</div>
+                <button type="button" class="pedidoGrid-item pedidoEliminar" onclick="eliminarPersonalizada1()">Eliminar</button>
+                <div id="personalizada1Cant" class="pedidoGrid-item pedidoCantidad">Cantidad <input id='personalizada1' type="number" min="1" max="10" value="1" onchange="personalizada1Carrito()"></div>
+                <div id="personalizada1Precio" class="pedidoGrid-item pedidoPrecio"></div>
+            </div>
             <div id="cocacolaCarro" class="pedidoGrid">
                 <img src="img/cocacola.jpg" alt="" height="40" width="40" class="pedidoGrid-item pedidoImg">
                 <div class="pedidoGrid-item pedidoPizza">Coca-cola</div>
@@ -301,6 +309,10 @@
                 <div id="flimonCant" class="pedidoGrid-item pedidoCantidad">Cantidad <input id='flimon' type="number" min="1" max="10" value="1" onchange="flimonCarrito()"></div>
                 <div id="flimonPrecio" class="pedidoGrid-item pedidoPrecio"></div>
             </div>
+            <div id="finalCarro" class="pedidoFinal">
+                <div id="precioTotal" class="pedidoGrid-item">Precio total: <strong>0 €</strong></div>
+                <button class="pedir">Confirmar pedido</button>
+            </div>
         </div>
         </section>
         <footer>
@@ -308,41 +320,37 @@
         </footer>
 
         <script>
-            var ibericaC, ibericaP;
-            var barbacoaC, barbacoaP;
-            var mediterraneaC, mediterraneaP;
-            var yorkC, yorkP;
-            var carbonaraC, carbonaraP;
-            var hawaianaC, hawaianaP;
-            var quesosC, quesosP;
-            var vegetalC, vegetalP;
-            var estacionesC, estacionesP;
-            var cocacolaC, cocacolaP;
-            var fnaranjaC, fnaranjaP;
-            var flimonC, flimonP;
+            var ibericaC, ibericaP = 0;
+            var barbacoaC, barbacoaP = 0;
+            var mediterraneaC, mediterraneaP = 0;
+            var yorkC, yorkP = 0;
+            var carbonaraC, carbonaraP = 0;
+            var hawaianaC, hawaianaP = 0;
+            var quesosC, quesosP = 0;
+            var vegetalC, vegetalP = 0;
+            var estacionesC, estacionesP = 0;
+            var personalizada1C, personalizada1P = 0;
+            var cocacolaC, cocacolaP = 0;
+            var fnaranjaC, fnaranjaP = 0;
+            var flimonC, flimonP = 0;
             var totalP;
-            ibericaP = 0;
-            barbacoaP = 0;
-            mediterraneaP = 0;
-            yorkP = 0;
-            carbonaraP = 0;
-            hawaianaP = 0;
-            quesosP = 0;
-            vegetalP = 0;
-            estacionesP = 0;
-            cocacolaP = 0;
-            fnaranjaP = 0;
-            flimonP = 0;
+
 
             //Añadir al carro
+            function addPersonalizada() {
+                document.getElementById("personalizada1Carro").style.display = "grid";
+                document.getElementById("personalizada1").value = 1;
+                document.getElementById("personalizada1Precio").innerHTML = (document.getElementById("precioCreaPizza").innerText + ' €');
+                personalizada1P = parseFloat(document.getElementById("precioCreaPizza").innerText);
+                actualizarPreciosCarrito();
+            }
+
             function addIberica() {
                 document.getElementById("ibericaCarro").style.display = "grid";
                 document.getElementById("iberica").value = 1;
                 document.getElementById("ibericaPrecio").innerHTML = (9.99 + ' €');
                 ibericaP = 9.99;
-                totalP = ibericaP + barbacoaP + mediterraneaP + yorkP + carbonaraP + hawaianaP + quesosP + vegetalP + estacionesP + cocacolaP + fnaranjaP + flimonP;
-                totalP = totalP.toFixed(2);
-                document.getElementById("precioTotal").innerHTML = ('Precio total: <strong>' + totalP + ' €</strong>');
+                actualizarPreciosCarrito();
             }
 
             function addBarbacoa() {
@@ -350,9 +358,7 @@
                 document.getElementById("barbacoa").value = 1;
                 document.getElementById("barbacoaPrecio").innerHTML = (9.99 + ' €');
                 barbacoaP = 9.99;
-                totalP = ibericaP + barbacoaP + mediterraneaP + yorkP + carbonaraP + hawaianaP + quesosP + vegetalP + estacionesP + cocacolaP + fnaranjaP + flimonP;
-                totalP = totalP.toFixed(2);
-                document.getElementById("precioTotal").innerHTML = ('Precio total: <strong>' + totalP + ' €</strong>');
+                actualizarPreciosCarrito();
             }
 
             function addMediterranea() {
@@ -360,9 +366,7 @@
                 document.getElementById("mediterranea").value = 1;
                 document.getElementById("mediterraneaPrecio").innerHTML = (9.99 + ' €');
                 mediterraneaP = 9.99;
-                totalP = ibericaP + barbacoaP + mediterraneaP + yorkP + carbonaraP + hawaianaP + quesosP + vegetalP + estacionesP + cocacolaP + fnaranjaP + flimonP;
-                totalP = totalP.toFixed(2);
-                document.getElementById("precioTotal").innerHTML = ('Precio total: <strong>' + totalP + ' €</strong>');
+                actualizarPreciosCarrito();
             }
 
             function addYork() {
@@ -370,9 +374,7 @@
                 document.getElementById("york").value = 1;
                 document.getElementById("yorkPrecio").innerHTML = (11.99 + ' €');
                 yorkP = 11.99;
-                totalP = ibericaP + barbacoaP + mediterraneaP + yorkP + carbonaraP + hawaianaP + quesosP + vegetalP + estacionesP + cocacolaP + fnaranjaP + flimonP;
-                totalP = totalP.toFixed(2);
-                document.getElementById("precioTotal").innerHTML = ('Precio total: <strong>' + totalP + ' €</strong>');
+                actualizarPreciosCarrito();
             }
 
             function addCarbonara() {
@@ -380,9 +382,7 @@
                 document.getElementById("carbonara").value = 1;
                 document.getElementById("carbonaraPrecio").innerHTML = (11.99 + ' €');
                 carbonaraP = 11.99;
-                totalP = ibericaP + barbacoaP + mediterraneaP + yorkP + carbonaraP + hawaianaP + quesosP + vegetalP + estacionesP + cocacolaP + fnaranjaP + flimonP;
-                totalP = totalP.toFixed(2);
-                document.getElementById("precioTotal").innerHTML = ('Precio total: <strong>' + totalP + ' €</strong>');
+                actualizarPreciosCarrito();
             }
 
             function addHawaiana() {
@@ -390,9 +390,7 @@
                 document.getElementById("hawaiana").value = 1;
                 document.getElementById("hawaianaPrecio").innerHTML = (11.99 + ' €');
                 hawaianaP = 11.99;
-                totalP = ibericaP + barbacoaP + mediterraneaP + yorkP + carbonaraP + hawaianaP + quesosP + vegetalP + estacionesP + cocacolaP + fnaranjaP + flimonP;
-                totalP = totalP.toFixed(2);
-                document.getElementById("precioTotal").innerHTML = ('Precio total: <strong>' + totalP + ' €</strong>');
+                actualizarPreciosCarrito();
             }
 
             function add4quesos() {
@@ -400,9 +398,7 @@
                 document.getElementById("4quesos").value = 1;
                 document.getElementById("4quesosPrecio").innerHTML = (11.99 + ' €');
                 quesosP = 11.99;
-                totalP = ibericaP + barbacoaP + mediterraneaP + yorkP + carbonaraP + hawaianaP + quesosP + vegetalP + estacionesP + cocacolaP + fnaranjaP + flimonP;
-                totalP = totalP.toFixed(2);
-                document.getElementById("precioTotal").innerHTML = ('Precio total: <strong>' + totalP + ' €</strong>');
+                actualizarPreciosCarrito();
             }
 
             function addVegetal() {
@@ -410,9 +406,7 @@
                 document.getElementById("vegetal").value = 1;
                 document.getElementById("vegetalPrecio").innerHTML = (11.99 + ' €');
                 vegetalP = 11.99;
-                totalP = ibericaP + barbacoaP + mediterraneaP + yorkP + carbonaraP + hawaianaP + quesosP + vegetalP + estacionesP + cocacolaP + fnaranjaP + flimonP;
-                totalP = totalP.toFixed(2);
-                document.getElementById("precioTotal").innerHTML = ('Precio total: <strong>' + totalP + ' €</strong>');
+                actualizarPreciosCarrito();
             }
 
             function add4estaciones() {
@@ -420,9 +414,7 @@
                 document.getElementById("4estaciones").value = 1;
                 document.getElementById("4estacionesPrecio").innerHTML = (11.99 + ' €');
                 estacionesP = 11.99;
-                totalP = ibericaP + barbacoaP + mediterraneaP + yorkP + carbonaraP + hawaianaP + quesosP + vegetalP + estacionesP + cocacolaP + fnaranjaP + flimonP;
-                totalP = totalP.toFixed(2);
-                document.getElementById("precioTotal").innerHTML = ('Precio total: <strong>' + totalP + ' €</strong>');
+                actualizarPreciosCarrito();
             }
 
             function addCocacola() {
@@ -430,9 +422,7 @@
                 document.getElementById("cocacola").value = 1;
                 document.getElementById("cocacolaPrecio").innerHTML = (1.49 + ' €');
                 cocacolaP = 1.49;
-                totalP = ibericaP + barbacoaP + mediterraneaP + yorkP + carbonaraP + hawaianaP + quesosP + vegetalP + estacionesP + cocacolaP + fnaranjaP + flimonP;
-                totalP = totalP.toFixed(2);
-                document.getElementById("precioTotal").innerHTML = ('Precio total: <strong>' + totalP + ' €</strong>');
+                actualizarPreciosCarrito();
             }
 
             function addFnaranja() {
@@ -440,9 +430,7 @@
                 document.getElementById("fnaranja").value = 1;
                 document.getElementById("fnaranjaPrecio").innerHTML = (1.49 + ' €');
                 fnaranjaP = 1.49;
-                totalP = ibericaP + barbacoaP + mediterraneaP + yorkP + carbonaraP + hawaianaP + quesosP + vegetalP + estacionesP + cocacolaP + fnaranjaP + flimonP;
-                totalP = totalP.toFixed(2);
-                document.getElementById("precioTotal").innerHTML = ('Precio total: <strong>' + totalP + ' €</strong>');
+                actualizarPreciosCarrito();
             }
 
             function addFlimon() {
@@ -450,117 +438,104 @@
                 document.getElementById("flimon").value = 1;
                 document.getElementById("flimonPrecio").innerHTML = (1.49 + ' €');
                 flimonP = 1.49;
-                totalP = ibericaP + barbacoaP + mediterraneaP + yorkP + carbonaraP + hawaianaP + quesosP + vegetalP + estacionesP + cocacolaP + fnaranjaP + flimonP;
-                totalP = totalP.toFixed(2);
-                document.getElementById("precioTotal").innerHTML = ('Precio total: <strong>' + totalP + ' €</strong>');
+                actualizarPreciosCarrito();
             }
 
             //Eliminar del carro
+            function eliminarPersonalizada1() {
+                document.getElementById("personalizada1Carro").style.display = "none";
+                personalizada1P = 0;
+                actualizarPreciosCarrito();
+            }
+
             function eliminarIberica() {
                 document.getElementById("ibericaCarro").style.display = "none";
                 ibericaP = 0;
-                totalP = ibericaP + barbacoaP + mediterraneaP + yorkP + carbonaraP + hawaianaP + quesosP + vegetalP + estacionesP + cocacolaP + fnaranjaP + flimonP;
-                totalP = totalP.toFixed(2);
-                document.getElementById("precioTotal").innerHTML = ('Precio total: <strong>' + totalP + ' €</strong>');
+                actualizarPreciosCarrito();
             }
 
             function eliminarBarbacoa() {
                 document.getElementById("barbacoaCarro").style.display = "none";
                 barbacoaP = 0;
-                totalP = ibericaP + barbacoaP + mediterraneaP + yorkP + carbonaraP + hawaianaP + quesosP + vegetalP + estacionesP + cocacolaP + fnaranjaP + flimonP;
-                totalP = totalP.toFixed(2);
-                document.getElementById("precioTotal").innerHTML = ('Precio total: <strong>' + totalP + ' €</strong>');
+                actualizarPreciosCarrito();
             }
 
             function eliminarMediterranea() {
                 document.getElementById("mediterraneaCarro").style.display = "none";
                 mediterraneaP = 0;
-                totalP = ibericaP + barbacoaP + mediterraneaP + yorkP + carbonaraP + hawaianaP + quesosP + vegetalP + estacionesP + cocacolaP + fnaranjaP + flimonP;
-                totalP = totalP.toFixed(2);
-                document.getElementById("precioTotal").innerHTML = ('Precio total: <strong>' + totalP + ' €</strong>');
+                actualizarPreciosCarrito();
             }
 
             function eliminarYork() {
                 document.getElementById("yorkCarro").style.display = "none";
                 yorkP = 0;
-                totalP = ibericaP + barbacoaP + mediterraneaP + yorkP + carbonaraP + hawaianaP + quesosP + vegetalP + estacionesP + cocacolaP + fnaranjaP + flimonP;
-                totalP = totalP.toFixed(2);
-                document.getElementById("precioTotal").innerHTML = ('Precio total: <strong>' + totalP + ' €</strong>');
+                actualizarPreciosCarrito();
             }
 
             function eliminarCarbonara() {
                 document.getElementById("carbonaraCarro").style.display = "none";
                 carbonaraP = 0;
-                totalP = ibericaP + barbacoaP + mediterraneaP + yorkP + carbonaraP + hawaianaP + quesosP + vegetalP + estacionesP + cocacolaP + fnaranjaP + flimonP;
-                totalP = totalP.toFixed(2);
-                document.getElementById("precioTotal").innerHTML = ('Precio total: <strong>' + totalP + ' €</strong>');
+                actualizarPreciosCarrito();
             }
 
             function eliminarHawaiana() {
                 document.getElementById("hawaianaCarro").style.display = "none";
                 hawaianaP = 0;
-                totalP = ibericaP + barbacoaP + mediterraneaP + yorkP + carbonaraP + hawaianaP + quesosP + vegetalP + estacionesP + cocacolaP + fnaranjaP + flimonP;
-                totalP = totalP.toFixed(2);
-                document.getElementById("precioTotal").innerHTML = ('Precio total: <strong>' + totalP + ' €</strong>');
+                actualizarPreciosCarrito();
             }
 
             function eliminar4quesos() {
                 document.getElementById("4quesosCarro").style.display = "none";
                 quesosP = 0;
-                totalP = ibericaP + barbacoaP + mediterraneaP + yorkP + carbonaraP + hawaianaP + quesosP + vegetalP + estacionesP + cocacolaP + fnaranjaP + flimonP;
-                totalP = totalP.toFixed(2);
-                document.getElementById("precioTotal").innerHTML = ('Precio total: <strong>' + totalP + ' €</strong>');
+                actualizarPreciosCarrito();
             }
 
             function eliminarVegetal() {
                 document.getElementById("vegetalCarro").style.display = "none";
                 vegetalP = 0;
-                totalP = ibericaP + barbacoaP + mediterraneaP + yorkP + carbonaraP + hawaianaP + quesosP + vegetalP + estacionesP + cocacolaP + fnaranjaP + flimonP;
-                totalP = totalP.toFixed(2);
-                document.getElementById("precioTotal").innerHTML = ('Precio total: <strong>' + totalP + ' €</strong>');
+                actualizarPreciosCarrito();
             }
 
             function eliminar4estaciones() {
                 document.getElementById("4estacionesCarro").style.display = "none";
                 estacionesP = 0;
-                totalP = ibericaP + barbacoaP + mediterraneaP + yorkP + carbonaraP + hawaianaP + quesosP + vegetalP + estacionesP + cocacolaP + fnaranjaP + flimonP;
-                totalP = totalP.toFixed(2);
-                document.getElementById("precioTotal").innerHTML = ('Precio total: <strong>' + totalP + ' €</strong>');
+                actualizarPreciosCarrito();
             }
 
             function eliminarCocacola() {
                 document.getElementById("cocacolaCarro").style.display = "none";
                 cocacolaP = 0;
-                totalP = ibericaP + barbacoaP + mediterraneaP + yorkP + carbonaraP + hawaianaP + quesosP + vegetalP + estacionesP + cocacolaP + fnaranjaP + flimonP;
-                totalP = totalP.toFixed(2);
-                document.getElementById("precioTotal").innerHTML = ('Precio total: <strong>' + totalP + ' €</strong>');
+                actualizarPreciosCarrito();
             }
 
             function eliminarFnaranja() {
                 document.getElementById("fnaranjaCarro").style.display = "none";
                 fnaranjaP = 0;
-                totalP = ibericaP + barbacoaP + mediterraneaP + yorkP + carbonaraP + hawaianaP + quesosP + vegetalP + estacionesP + cocacolaP + fnaranjaP + flimonP;
-                totalP = totalP.toFixed(2);
-                document.getElementById("precioTotal").innerHTML = ('Precio total: <strong>' + totalP + ' €</strong>');
+                actualizarPreciosCarrito();
             }
 
             function eliminarFlimon() {
                 document.getElementById("flimonCarro").style.display = "none";
                 flimonP = 0;
-                totalP = ibericaP + barbacoaP + mediterraneaP + yorkP + carbonaraP + hawaianaP + quesosP + vegetalP + estacionesP + cocacolaP + fnaranjaP + flimonP;
-                totalP = totalP.toFixed(2);
-                document.getElementById("precioTotal").innerHTML = ('Precio total: <strong>' + totalP + ' €</strong>');
+                actualizarPreciosCarrito();
             }
 
             //Cambiar cantidad
+            function personalizada1Carrito() {
+                ibericaC = (document.getElementById('personalizada1').value);
+                ibericaP = ibericaC * 9.99;
+                document.getElementById("personalizada1Precio").innerHTML = (personalizada1P + ' €');
+                document.getElementById("personalizada1Carro").style.display = "grid";
+                actualizarPreciosCarrito();
+                return personalizada1P;
+            }
+
             function ibericaCarrito() {
                 ibericaC = (document.getElementById('iberica').value);
                 ibericaP = ibericaC * 9.99;
                 document.getElementById("ibericaPrecio").innerHTML = (ibericaP + ' €');
                 document.getElementById("ibericaCarro").style.display = "grid";
-                totalP = ibericaP + barbacoaP + mediterraneaP + yorkP + carbonaraP + hawaianaP + quesosP + vegetalP + estacionesP + cocacolaP + fnaranjaP + flimonP;
-                totalP = totalP.toFixed(2);
-                document.getElementById("precioTotal").innerHTML = ('Precio total: <strong>' + totalP + ' €</strong>');
+                actualizarPreciosCarrito();
                 return ibericaP;
             }
 
@@ -569,9 +544,7 @@
                 barbacoaP = barbacoaC * 9.99;
                 document.getElementById("barbacoaPrecio").innerHTML = (barbacoaP + ' €');
                 document.getElementById("barbacoaCarro").style.display = "grid";
-                totalP = ibericaP + barbacoaP + mediterraneaP + yorkP + carbonaraP + hawaianaP + quesosP + vegetalP + estacionesP + cocacolaP + fnaranjaP + flimonP;
-                totalP = totalP.toFixed(2);
-                document.getElementById("precioTotal").innerHTML = ('Precio total: <strong>' + totalP + ' €</strong>');
+                actualizarPreciosCarrito();
                 return barbacoaP;
             }
 
@@ -580,9 +553,7 @@
                 mediterraneaP = mediterraneaC * 9.99;
                 document.getElementById("mediterraneaPrecio").innerHTML = (mediterraneaP + ' €');
                 document.getElementById("mediterraneaCarro").style.display = "grid";
-                totalP = ibericaP + barbacoaP + mediterraneaP + yorkP + carbonaraP + hawaianaP + quesosP + vegetalP + estacionesP + cocacolaP + fnaranjaP + flimonP;
-                totalP = totalP.toFixed(2);
-                document.getElementById("precioTotal").innerHTML = ('Precio total: <strong>' + totalP + ' €</strong>');
+                actualizarPreciosCarrito();
                 return mediterraneaP;
             }
 
@@ -591,9 +562,7 @@
                 yorkP = yorkC * 11.99;
                 document.getElementById("yorkPrecio").innerHTML = (yorkP + ' €');
                 document.getElementById("yorkCarro").style.display = "grid";
-                totalP = ibericaP + barbacoaP + mediterraneaP + yorkP + carbonaraP + hawaianaP + quesosP + vegetalP + estacionesP + cocacolaP + fnaranjaP + flimonP;
-                totalP = totalP.toFixed(2);
-                document.getElementById("precioTotal").innerHTML = ('Precio total: <strong>' + totalP + ' €</strong>');
+                actualizarPreciosCarrito();
                 return yorkP;
             }
 
@@ -602,9 +571,7 @@
                 carbonaraP = carbonaraC * 11.99;
                 document.getElementById("carbonaraPrecio").innerHTML = (carbonaraP + ' €');
                 document.getElementById("carbonaraCarro").style.display = "grid";
-                totalP = ibericaP + barbacoaP + mediterraneaP + yorkP + carbonaraP + hawaianaP + quesosP + vegetalP + estacionesP + cocacolaP + fnaranjaP + flimonP;
-                totalP = totalP.toFixed(2);
-                document.getElementById("precioTotal").innerHTML = ('Precio total: <strong>' + totalP + ' €</strong>');
+                actualizarPreciosCarrito();
                 return carbonaraP;
             }
 
@@ -613,9 +580,7 @@
                 hawaianaP = hawaianaC * 11.99;
                 document.getElementById("hawaianaPrecio").innerHTML = (hawaianaP + ' €');
                 document.getElementById("hawaianaCarro").style.display = "grid";
-                totalP = ibericaP + barbacoaP + mediterraneaP + yorkP + carbonaraP + hawaianaP + quesosP + vegetalP + estacionesP + cocacolaP + fnaranjaP + flimonP;
-                totalP = totalP.toFixed(2);
-                document.getElementById("precioTotal").innerHTML = ('Precio total: <strong>' + totalP + ' €</strong>');
+                actualizarPreciosCarrito();
                 return hawaianaP;
             }
 
@@ -624,9 +589,7 @@
                 quesosP = quesosC * 11.99;
                 document.getElementById("4quesosPrecio").innerHTML = (quesosP + ' €');
                 document.getElementById("4quesosCarro").style.display = "grid";
-                totalP = ibericaP + barbacoaP + mediterraneaP + yorkP + carbonaraP + hawaianaP + quesosP + vegetalP + estacionesP + cocacolaP + fnaranjaP + flimonP;
-                totalP = totalP.toFixed(2);
-                document.getElementById("precioTotal").innerHTML = ('Precio total: <strong>' + totalP + ' €</strong>');
+                actualizarPreciosCarrito();
                 return quesosP;
             }
 
@@ -635,9 +598,7 @@
                 vegetalP = vegetalC * 11.99;
                 document.getElementById("vegetalPrecio").innerHTML = (vegetalP + ' €');
                 document.getElementById("vegetalCarro").style.display = "grid";
-                totalP = ibericaP + barbacoaP + mediterraneaP + yorkP + carbonaraP + hawaianaP + quesosP + vegetalP + estacionesP + cocacolaP + fnaranjaP + flimonP;
-                totalP = totalP.toFixed(2);
-                document.getElementById("precioTotal").innerHTML = ('Precio total: <strong>' + totalP + ' €</strong>');
+                actualizarPreciosCarrito();
                 return vegetalP;
             }
 
@@ -646,9 +607,7 @@
                 estacionesP = estacionesC * 11.99;
                 document.getElementById("4estacionesPrecio").innerHTML = (estacionesP + ' €');
                 document.getElementById("4estacionesCarro").style.display = "grid";
-                totalP = ibericaP + barbacoaP + mediterraneaP + yorkP + carbonaraP + hawaianaP + quesosP + vegetalP + estacionesP + cocacolaP + fnaranjaP + flimonP;
-                totalP = totalP.toFixed(2);
-                document.getElementById("precioTotal").innerHTML = ('Precio total: <strong>' + totalP + ' €</strong>');
+                actualizarPreciosCarrito();
                 return estacionesP;
             }
 
@@ -657,9 +616,7 @@
                 cocacolaP = cocacolaC * 1.49;
                 document.getElementById("cocacolaPrecio").innerHTML = (cocacolaP + ' €');
                 document.getElementById("cocacolaCarro").style.display = "grid";
-                totalP = ibericaP + barbacoaP + mediterraneaP + yorkP + carbonaraP + hawaianaP + quesosP + vegetalP + estacionesP + cocacolaP + fnaranjaP + flimonP;
-                totalP = totalP.toFixed(2);
-                document.getElementById("precioTotal").innerHTML = ('Precio total: <strong>' + totalP + ' €</strong>');
+                actualizarPreciosCarrito();
                 return cocacolaP;
             }
 
@@ -668,9 +625,7 @@
                 fnaranjaP = fnaranjaC * 1.49;
                 document.getElementById("fnaranjaPrecio").innerHTML = (fnaranjaP + ' €');
                 document.getElementById("fnaranjaCarro").style.display = "grid";
-                totalP = ibericaP + barbacoaP + mediterraneaP + yorkP + carbonaraP + hawaianaP + quesosP + vegetalP + estacionesP + cocacolaP + fnaranjaP + flimonP;
-                totalP = totalP.toFixed(2);
-                document.getElementById("precioTotal").innerHTML = ('Precio total: <strong>' + totalP + ' €</strong>');
+                actualizarPreciosCarrito();
                 return fnaranjaP;
             }
 
@@ -679,9 +634,7 @@
                 flimonP = flimonC * 1.49;
                 document.getElementById("flimonPrecio").innerHTML = (flimonP + ' €');
                 document.getElementById("flimonCarro").style.display = "grid";
-                totalP = ibericaP + barbacoaP + mediterraneaP + yorkP + carbonaraP + hawaianaP + quesosP + vegetalP + estacionesP + cocacolaP + fnaranjaP + flimonP;
-                totalP = totalP.toFixed(2);
-                document.getElementById("precioTotal").innerHTML = ('Precio total: <strong>' + totalP + ' €</strong>');
+                actualizarPreciosCarrito();
                 return flimonP;
             }
         </script>
