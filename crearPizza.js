@@ -61,16 +61,18 @@ function reset() {
 function cambioSalsa() {
     vSalsa.src = "img\\capas\\" + selectSalsa.value + ".png";
 }
-
+//Función para definir el precio de la pizza
 function cambiarPrecio(sumado) {
 
     var precio = parseFloat(document.getElementById("precioCreaPizza").innerText);
     if (sumado == true) {
-        precio += 0.4;
+        precio += 0.45;
+
     } else if (sumado == false) {
-        precio -= 0.4;
+        precio -= 0.45;
+
     }
-    document.getElementById("precioCreaPizza").innerText = precio;
+    document.getElementById("precioCreaPizza").innerText = precio.toFixed(2);
 }
 
 //Función añadir ingredientes. El argumento que se le pasa es el nombre del ingrediente
@@ -78,6 +80,8 @@ function añadirIngrediente(e) {
     for (i = 1; i <= 5; i++) {
         var ingrediente = document.getElementById("ingrediente" + i);
         var cantidad = parseInt(document.getElementById("cantidad" + e).innerHTML);
+        var listaIngredientes = document.getElementById("ingredientesCreaPizza").innerText;
+        var ingredienteAAnyadir = document.getElementById(e + "+1").value;
 
         if (ingrediente.name == "true" && cantidad !== 2) {
 
@@ -87,14 +91,16 @@ function añadirIngrediente(e) {
             if (cantidad === 0) {
                 cantidad = 1;
                 cambiarPrecio(true);
+                listaIngredientes = listaIngredientes + "," + ingredienteAAnyadir;
             } else if (cantidad === 1) {
                 cantidad = 2;
                 cambiarPrecio(true);
+                listaIngredientes = listaIngredientes + ", más" + ingredienteAAnyadir;
             } else if (cantidad === 2) {
                 alert("Solo puedes añadir dos veces el mismo producto.");
                 return;
             }
-
+            document.getElementById("ingredientesCreaPizza").innerText = listaIngredientes;
             document.getElementById("cantidad" + e).innerHTML = cantidad;
             return;
         }
@@ -107,6 +113,8 @@ function quitarIngrediente(e) {
 
     for (i = 1; i <= 5; i++) {
         var ingrediente = document.getElementById("ingrediente" + i);
+        var listaIngredientes = document.getElementById("ingredientesCreaPizza").innerText;
+        var ingredienteAEliminar = document.getElementById(e + "-1").value;
 
 
         if (ingrediente.name == "false" && ingrediente.src.includes(e)) {
@@ -115,15 +123,38 @@ function quitarIngrediente(e) {
             ingrediente.name = "true";
 
             var cantidad = parseInt(document.getElementById("cantidad" + e).innerHTML);
+            var arrayIngredientes = listaIngredientes.split(',');
+            var nuevaListaIngredientes = '';
+
+            for (var i = 0; i <= arrayIngredientes.length; i++) {
+                console.log(arrayIngredientes[i], ingredienteAEliminar);
+                if (cantidad == 2) {
+                    if (arrayIngredientes[i] == (" más" + ingredienteAEliminar)) {
+                        arrayIngredientes.splice(i, 1);
+
+                    }
+                } else if (cantidad == 1) {
+                    if (arrayIngredientes[i] == ingredienteAEliminar) {
+                        arrayIngredientes.splice(i, 1);
+
+                    }
+                }
+
+            }
+            nuevaListaIngredientes = arrayIngredientes.toString();
+
+            document.getElementById("ingredientesCreaPizza").innerText = nuevaListaIngredientes;
+
 
             if (cantidad > 0) {
                 cantidad--;
             }
-
             document.getElementById("cantidad" + e).innerHTML = cantidad;
             if (cantidad = 0) {
                 document.getElementById("cantidad" + e).style.visibility = 'hidden';
             }
+
+
             cambiarPrecio(false);
             return;
 
@@ -132,18 +163,13 @@ function quitarIngrediente(e) {
 }
 
 /* Acordeon */
-$(document).ready(function() {
+/*$(document).ready(function() {
+
     $(".flip").click(function() {
         $(".panel").slideDown(500);
-    })
-})
+    });
 
-function enviarCrearPizza() {
-    document.getElementById("4estacionesCarro").style.display = "grid";
-    document.getElementById("4estaciones").value = 1;
-    document.getElementById("4estacionesPrecio").innerHTML = (11.99 + ' €');
-    personalizadaP = 11.99;
-    totalP = ibericaP + barbacoaP + mediterraneaP + yorkP + carbonaraP + hawaianaP + quesosP + vegetalP + estacionesP + cocacolaP + fnaranjaP + flimonP;
-    totalP = totalP.toFixed(2);
-    document.getElementById("precioTotal").innerHTML = ('Precio total: <strong>' + totalP + ' €</strong>');
-}
+    $(".flip").click(function() {
+        $(".panel").css("display", "none");
+    })
+});*/
