@@ -62,6 +62,17 @@ function cambioSalsa() {
     vSalsa.src = "img\\capas\\" + selectSalsa.value + ".png";
 }
 
+function cambiarPrecio(sumado) {
+
+    var precio = parseFloat(document.getElementById("precioCreaPizza").innerText);
+    if (sumado == true) {
+        precio += 0.4;
+    } else if (sumado == false) {
+        precio -= 0.4;
+    }
+    document.getElementById("precioCreaPizza").innerText = precio;
+}
+
 //Función añadir ingredientes. El argumento que se le pasa es el nombre del ingrediente
 function añadirIngrediente(e) {
     for (i = 1; i <= 5; i++) {
@@ -75,8 +86,10 @@ function añadirIngrediente(e) {
 
             if (cantidad === 0) {
                 cantidad = 1;
+                cambiarPrecio(true);
             } else if (cantidad === 1) {
                 cantidad = 2;
+                cambiarPrecio(true);
             } else if (cantidad === 2) {
                 alert("Solo puedes añadir dos veces el mismo producto.");
                 return;
@@ -111,7 +124,26 @@ function quitarIngrediente(e) {
             if (cantidad = 0) {
                 document.getElementById("cantidad" + e).style.visibility = 'hidden';
             }
+            cambiarPrecio(false);
             return;
+
         }
     }
+}
+
+/* Acordeon */
+$(document).ready(function() {
+    $(".flip").click(function() {
+        $(".panel").slideDown(500);
+    })
+})
+
+function enviarCrearPizza() {
+    document.getElementById("4estacionesCarro").style.display = "grid";
+    document.getElementById("4estaciones").value = 1;
+    document.getElementById("4estacionesPrecio").innerHTML = (11.99 + ' €');
+    personalizadaP = 11.99;
+    totalP = ibericaP + barbacoaP + mediterraneaP + yorkP + carbonaraP + hawaianaP + quesosP + vegetalP + estacionesP + cocacolaP + fnaranjaP + flimonP;
+    totalP = totalP.toFixed(2);
+    document.getElementById("precioTotal").innerHTML = ('Precio total: <strong>' + totalP + ' €</strong>');
 }
