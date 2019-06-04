@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Pizzeria Verona</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
+
 <body>
     <header>
         <div>
@@ -16,10 +18,10 @@
     </header>
 
     <nav class="navbar">
-            <a href="contacto.html">Contacto</a>
-            <a href="conocenos.html">Conócenos</a>
-            <a href="pedidos.html">Pedidos</a>
-            <a class="active">Inicio</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="conocenos.html">Conócenos</a>
+        <a href="pedidos.html">Pedidos</a>
+        <a class="active">Inicio</a>
     </nav>
 
     <section>
@@ -39,7 +41,7 @@
                 <h3 class="seccion">CREA TU PIZZA</h2>
             </a>
             <a class="gridInicio-item" href="contacto.html">
-                <img  class="imagenInicio" src="img/maps.png" alt="" height="200px" width="200px">
+                <img class="imagenInicio" src="img/maps.png" alt="" height="200px" width="200px">
                 <h3 class="seccion">DÓNDE ESTAMOS</h2>
             </a>
         </div>
@@ -50,20 +52,23 @@
     </footer>
 
     <script>
-    var slideIndex = 0;
-    carousel();
+        var slideIndex = 0;
+        carousel();
 
-    function carousel() {
-    var i;
-    var x = document.getElementsByClassName("imgSlide");
-    for (i = 0; i < x.length; i++) {
-        x[i].style.display = "none"; 
-    }
-    slideIndex++;
-    if (slideIndex > x.length) {slideIndex = 1} 
-    x[slideIndex-1].style.display = "block"; 
-    setTimeout(carousel, 3000);
-    }
+        function carousel() {
+            var i;
+            var x = document.getElementsByClassName("imgSlide");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > x.length) {
+                slideIndex = 1
+            }
+            x[slideIndex - 1].style.display = "block";
+            setTimeout(carousel, 3000);
+        }
     </script>
 </body>
+
 </html>
