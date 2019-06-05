@@ -4,3 +4,11 @@ function actualizarPreciosCarrito() {
     totalP = totalP.toFixed(2);
     document.getElementById("precioTotal").innerHTML = ('Precio total: <strong>' + totalP + ' €</strong>');
 }
+
+function openForm() {
+    document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+}
