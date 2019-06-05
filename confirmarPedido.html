@@ -7,9 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Pizzeria Verona</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
-    <style>
-
-    </style>
 </head>
 
 <body>
@@ -27,28 +24,26 @@
         <a class="active">Inicio</a>
     </nav>
 
-    <section>
-        <div class="left-column">
-            <div>
-                <form action="">
-                    <label for="">Nombre:</label>
-                    <input type="text"><br>
-                    <label for="">Dirección:</label>
-                    <input type="text"><br>
-                    <label for="">Teléfono:</label>
-                    <input type="text"><br>
-                    <label for=""></label>
-                    <input type="text"><br>
-
-                </form>
-            </div>
+    <section class="contenido">
+        <div>
+            <h3>El pedido ha sido realizado.</h3>
+            <p>Esperemos que disfrute de su compra. <br>El tiempo aproximado hasta que llegue a su casa es de <span id="crono">31</span> minutos</p>
         </div>
-        <div class="right-column"></div>
     </section>
 
     <footer>
         Footer
     </footer>
+    <script>
+        function crono() {
+            var tiempo = parseInt(document.getElementById('crono').innerText);
+            if (tiempo > 0) {
+                tiempo--;
+                document.getElementById('crono').innerText = tiempo;
+            }
+        }
+        window.setTimeout(crono(), 60000);
+    </script>
 </body>
 
 </html>
