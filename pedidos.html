@@ -8,6 +8,8 @@
     <title>Pizzeria Verona</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/vast-engineering/jquery-popup-overlay@2/jquery.popupoverlay.min.js">
+    </script>
     <script src="crearPizza.js"></script>
     <script src="pedidos.js"></script>
     <style>
@@ -311,10 +313,32 @@
             </div>
             <div id="finalCarro" class="pedidoFinal">
                 <div id="precioTotal" class="pedidoGrid-item">Precio total: <strong>0 €</strong></div>
-                <button class="pedir">Confirmar pedido</button>
+                <button class="pedir" onclick="openForm()">Confirmar pedido</button>
             </div>
+            <div id="pop-up">
+                <div class="form-popup" id="myForm">
+                    <form action="confirmarPedido.html" class="form-container" method="POST">
+                        <h3>Por favor, rellene sus datos para finalizar el pedido:</h3>
+                        <label for="">Nombre:</label><br>
+                        <input type="text"><br>
+                        <label for="">Dirección:</label><br>
+                        <input type="text"><br>
+                        <label for="">Teléfono:</label><br>
+                        <input type="text"><br>
+                        <label for="">Método de pago:</label><br>
+                        <select name="" id="">
+                                <option value="">Efectivo</option>
+                                <option value="">PayPal</option>
+                                </select><br><br>
+                        <button class="pedir">Comprar</button>
+                    </form>
+                </div>
+
+            </div>
+
         </div>
         </section>
+
         <footer>
             Footer
         </footer>
