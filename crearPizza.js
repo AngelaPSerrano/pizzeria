@@ -7,32 +7,13 @@ function inicio() {
 
     if (anchoPantalla < 950) {
 
-        document.getElementById("vMasa").style.marginLeft = (anchoPantalla - 290) / 2 + "px";
-        document.getElementById("vMasa").style.marginRight = (anchoPantalla - 290) / 2 + "px";
-        document.getElementById("vSalsa").style.marginLeft = (anchoPantalla - 290) / 2 + "px";
-        document.getElementById("vSalsa").style.marginRight = (anchoPantalla - 290) / 2 + "px";
-        document.getElementById("vQueso").style.marginLeft = (anchoPantalla - 290) / 2 + "px";
-        document.getElementById("vQueso").style.marginRight = (anchoPantalla - 290) / 2 + "px";
-        document.getElementById("ingrediente1").style.marginLeft = (anchoPantalla - 290) / 2 + "px";
-        document.getElementById("ingrediente1").style.marginRight = (anchoPantalla - 290) / 2 + "px";
-        document.getElementById("ingrediente2").style.marginLeft = (anchoPantalla - 290) / 2 + "px";
-        document.getElementById("ingrediente2").style.marginRight = (anchoPantalla - 290) / 2 + "px";
-        document.getElementById("ingrediente3").style.marginLeft = (anchoPantalla - 290) / 2 + "px";
-        document.getElementById("ingrediente3").style.marginRight = (anchoPantalla - 290) / 2 + "px";
-        document.getElementById("ingrediente4").style.marginLeft = (anchoPantalla - 290) / 2 + "px";
-        document.getElementById("ingrediente4").style.marginRight = (anchoPantalla - 290) / 2 + "px";
-        document.getElementById("ingrediente5").style.marginLeft = (anchoPantalla - 290) / 2 + "px";
-        document.getElementById("ingrediente5").style.marginRight = (anchoPantalla - 290) / 2 + "px";
+        document.getElementById("visorInteractivo").style.marginLeft = (anchoPantalla - 290) / 2 + "px";
+        document.getElementById("visorInteractivo").style.marginRight = (anchoPantalla - 290) / 2 + "px";
 
     } else {
-        document.getElementById("vMasa").style.marginLeft = 8 + "%";
-        document.getElementById("vSalsa").style.marginLeft = 8 + "%";
-        document.getElementById("vQueso").style.marginLeft = 8 + "%";
-        document.getElementById("ingrediente1").style.marginLeft = 8 + "%";
-        document.getElementById("ingrediente2").style.marginLeft = 8 + "%";
-        document.getElementById("ingrediente3").style.marginLeft = 8 + "%";
-        document.getElementById("ingrediente4").style.marginLeft = 8 + "%";
-        document.getElementById("ingrediente5").style.marginLeft = 8 + "%";
+        document.getElementById("visorInteractivo").style.marginLeft = 8 + "%";
+        document.getElementById("visorInteractivo").style.marginLeft = 8 + "%";
+
     }
 }
 // Función resetear la selección
@@ -96,12 +77,12 @@ function añadirIngrediente(e) {
                 cantidad = 2;
                 cambiarPrecio(true);
                 listaIngredientes = listaIngredientes + ", más" + ingredienteAAnyadir;
-            } else if (cantidad === 2) {
-                alert("Solo puedes añadir dos veces el mismo producto.");
-                return;
             }
             document.getElementById("ingredientesCreaPizza").innerText = listaIngredientes;
             document.getElementById("cantidad" + e).innerHTML = cantidad;
+            return;
+        } else if (cantidad === 2) {
+            alert("Solo puedes añadir dos veces el mismo producto.");
             return;
         }
     }
