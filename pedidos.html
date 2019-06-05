@@ -342,7 +342,10 @@
                 document.getElementById("personalizada1").value = 1;
                 document.getElementById("personalizada1Precio").innerHTML = (document.getElementById("precioCreaPizza").innerText + ' €');
                 personalizada1P = parseFloat(document.getElementById("precioCreaPizza").innerText);
+                personalizadaTotal = personalizada1P;
                 actualizarPreciosCarrito();
+                return personalizada1P;
+                return personalizadaTotal;
             }
 
             function addIberica() {
@@ -444,7 +447,7 @@
             //Eliminar del carro
             function eliminarPersonalizada1() {
                 document.getElementById("personalizada1Carro").style.display = "none";
-                personalizada1P = 0;
+                personalizadaTotal = 0;
                 actualizarPreciosCarrito();
             }
 
@@ -522,12 +525,13 @@
 
             //Cambiar cantidad
             function personalizada1Carrito() {
-                ibericaC = (document.getElementById('personalizada1').value);
-                ibericaP = ibericaC * 9.99;
-                document.getElementById("personalizada1Precio").innerHTML = (personalizada1P + ' €');
+                personalizada1C = (document.getElementById('personalizada1').value);
+                personalizadaTotal = personalizada1C * personalizada1P;
+                personalizadaFixed = personalizadaTotal.toFixed(2);
+                document.getElementById("personalizada1Precio").innerHTML = (personalizadaFixed + ' €');
                 document.getElementById("personalizada1Carro").style.display = "grid";
                 actualizarPreciosCarrito();
-                return personalizada1P;
+                return personalizadaTotal;
             }
 
             function ibericaCarrito() {
