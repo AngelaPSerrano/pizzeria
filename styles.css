@@ -60,7 +60,26 @@ footer {
     background-color: red;
     color: white;
     text-align: center;
-    padding: 20px;
+    height: 80px;
+    padding: 16px;
+}
+
+.footerContenido {
+    width: 100%;
+    max-width: 1250px;
+    margin: 0px auto;
+}
+
+.textoFooter {
+    float: left;
+    position: relative;
+    top: 16px;
+}
+
+.iconosFooter {
+    float: right;
+    position: relative;
+    top: 6px;
 }
 
 .seccion {
@@ -69,7 +88,6 @@ footer {
     background-color: white;
     margin: 0px;
 }
-
 
 /* Página 'Inicio */
 
