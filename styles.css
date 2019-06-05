@@ -123,11 +123,14 @@ footer {
 
 .grid-item {
     padding: 10px;
-    text-align: center;
     background-color: white;
 }
 
-.grid-item img {
+.grid-item:not(#bloqueCreaPizza) {
+    text-align: center;
+}
+
+.grid-item img:not(.imgVisorInteractivo) {
     display: block;
     margin: 20px auto;
 }
