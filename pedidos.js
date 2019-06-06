@@ -1,37 +1,40 @@
+/* Funciones para el formulario de recogida de datos */
+
+//Abre el formulario
+function openForm() {
+    document.getElementById("myForm").style.display = "block";
+    //setPrecioFinal();
+}
+
+//No se está utilizando
+// Cierra el formulario
+function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+}
+
+//No se está utilizando
+// Recoge el precio final con la intención de que luego se pase oculto en el formulario
+function setPrecioFinal() {
+    document.getElementById('precioFinal').value = document.getElementById('numeroPrecioTotal').innerHTML;
+}
+// Enlaza el botón con el enlace de la url indicada
+function procedimientoFinal() {
+    location.href = 'confirmarPedido.html';
+}
+
+
+
+
+
+/* Scripts anteriormente situado en pedidos.html */
+
 function actualizarPreciosCarrito() {
     totalP = personalizada1P + ibericaP + barbacoaP + mediterraneaP + yorkP +
         carbonaraP + hawaianaP + quesosP + vegetalP + estacionesP + cocacolaP + fnaranjaP + flimonP;
     totalP = totalP.toFixed(2);
     document.getElementById("precioTotal").innerHTML = ('Precio total: <strong>' + totalP + ' €</strong>');
+    return totalP;
 }
-
-function openForm() {
-    document.getElementById("myForm").style.display = "block";
-    setPrecioFinal();
-}
-
-function closeForm() {
-    document.getElementById("myForm").style.display = "none";
-}
-
-function setPrecioFinal() {
-    document.getElementById('precioFinal').value = document.getElementById('numeroPrecioTotal').innerHTML;
-}
-
-/*function procedimientoFinal() {
-    var nombre = document.getElementById("nombreFormulario").value;
-    var direccion = document.getElementById("direccionFormulario").value;
-    var telefono = document.getElementById("telefonoFormulario").value;
-    var metodoPago = document.getElementById("pagoFormulario").value;
-
-    document.getElementById("nombreFinal").innerHTML = nombre;
-    document.getElementById("direccionFinal").innerHTML = direccion;
-    document.getElementById("telefonoFinal").innerHTML = telefono;
-
-    if (metodoPago == 'Efectivo') {
-        document.getElementById("pagoFinal").innerHTML = "No olvide preparar el dinero para pagar cuando llegue el repartidor."
-    }
-}*/
 
 var ibericaC, ibericaP = 0;
 var barbacoaC, barbacoaP = 0;
