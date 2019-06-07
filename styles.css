@@ -376,6 +376,7 @@ td button {
 #visorInteractivo {
     float: left;
     flex: 50%;
+    margin-left: 8%;
 }
 
 #menuSelectores {
@@ -405,6 +406,7 @@ td button {
     #visorInteractivo {
         width: 100%;
         flex: 100%;
+        margin-left: 0%;
     }
     .container {
         flex-direction: column;

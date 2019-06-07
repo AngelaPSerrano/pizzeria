@@ -1,21 +1,7 @@
 var vSalsa = document.getElementById("vSalsa");
 var selectSalsa = document.getElementById("selectSalsa");
 
-function inicio() {
-    //Establecer el tamaño del visor interactivo dependiendo del tamaño de la pantalla del usuario
-    var anchoPantalla = document.documentElement.clientWidth;
 
-    if (anchoPantalla < 950) {
-
-        document.getElementById("visorInteractivo").style.marginLeft = (anchoPantalla - 290) / 2 + "px";
-        document.getElementById("visorInteractivo").style.marginRight = (anchoPantalla - 290) / 2 + "px";
-
-    } else {
-        document.getElementById("visorInteractivo").style.marginLeft = 8 + "%";
-        document.getElementById("visorInteractivo").style.marginLeft = 8 + "%";
-
-    }
-}
 // Función resetear la selección
 function reset() {
     var reset = confirm("¿Seguro que desea eliminar la pizza y volver a empezar?");
