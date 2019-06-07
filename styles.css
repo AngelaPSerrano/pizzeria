@@ -116,6 +116,7 @@ footer {
     max-width: 100%;
 }
 
+
 /* Página 'Pedidos' */
 
 .contenido {
@@ -354,21 +355,10 @@ footer {
     display: inline-block;
 }
 
-.buttonBig {
-    border-radius: 12px;
-    cursor: pointer;
-    background-color: rgb(255, 67, 67);
-    color: white;
-    border: none;
-    padding: 8px;
-    font-size: 18px;
-    margin: 10px;
-}
-
 td button {
     border-radius: 50%;
     cursor: pointer;
-    background-color: rgb(255, 67, 67);
+    background-color: red;
     color: white;
     width: 25px;
     height: 25px;
