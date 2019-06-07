@@ -144,15 +144,3 @@ function quitarIngrediente(e) {
         }
     }
 }
-
-/* Acordeon */
-/*$(document).ready(function() {
-
-    $(".flip").click(function() {
-        $(".panel").slideDown(500);
-    });
-
-    $(".flip").click(function() {
-        $(".panel").css("display", "none");
-    })
-});*/

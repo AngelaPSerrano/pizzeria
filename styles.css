@@ -89,6 +89,7 @@ footer {
     margin: 0px;
 }
 
+
 /* Página 'Inicio */
 
 .gridInicio-container {
@@ -231,6 +232,14 @@ footer {
 }
 
 
+/* Página de Confirmar Pedido */
+
+#tablaFinal {
+    width: 400px;
+    text-align: center;
+}
+
+
 /* Página 'Conócenos' */
 
 .gridConocenos {
@@ -309,25 +318,6 @@ footer {
 #eligeTienda {
     display: none;
 }
-
-
-/* Crea tu pizza */
-
-
-/*#creaPizza:hover {
-    background-color: rgb(255, 67, 67);
-    color: white;
-}*/
-
-
-/*.flip {
-    cursor: pointer;
-}
-
-.panel {
-    display: none;
-    overflow: hidden;
-}*/
 
 #interiorMenuSelectores {
     text-align: center;
@@ -460,7 +450,7 @@ td button {
 }
 
 
-/*///////////////////////////*/
+/* Formulario de crearPizza */
 
 .form-popup {
     display: none;
@@ -468,9 +458,6 @@ td button {
     background-color: white;
     text-align: center;
 }
-
-
-/* Full-width input fields */
 
 .form-container input[type=text],
 .form-container select {
@@ -481,17 +468,11 @@ td button {
     margin: 1px;
 }
 
-
-/* When the inputs get focus, do something */
-
 .form-container input[type=text]:focus {
     border: 1px solid black;
     /*para compenasar el border*/
     margin: 0;
 }
-
-
-/* Add some hover effects to buttons */
 
 .form-container {
     opacity: 1;

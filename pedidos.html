@@ -314,7 +314,7 @@
                 <button class="pedir" onclick="openForm()">Confirmar pedido</button>
             </div>
             <div id="pop-up">
-                <div class="form-popup" id="myForm">
+                <form class="form-popup" id="myForm" method="post" action="confirmarPedido.php">
                     <div class="form-container">
                         <h3>Por favor, rellene sus datos para finalizar el pedido:</h3>
                         <label for="">Nombre:</label><br>
@@ -331,7 +331,7 @@
                         <button class="pedir" onclick="procedimientoFinal()">Comprar</button>
                         <input type="text" id="precioFinal" name="precioFinal" value="" hidden>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
         </section>

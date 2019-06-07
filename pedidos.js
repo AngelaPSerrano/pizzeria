@@ -1,29 +1,36 @@
 /* Funciones para el formulario de recogida de datos */
 
-//Abre el formulario
+// Abre el formulario
 function openForm() {
     document.getElementById("myForm").style.display = "block";
-    //setPrecioFinal();
+    setPrecioFinal();
 }
 
-//No se está utilizando
-// Cierra el formulario
-function closeForm() {
-    document.getElementById("myForm").style.display = "none";
-}
-
-//No se está utilizando
 // Recoge el precio final con la intención de que luego se pase oculto en el formulario
 function setPrecioFinal() {
-    document.getElementById('precioFinal').value = document.getElementById('numeroPrecioTotal').innerHTML;
+    document.getElementById('precioFinal').value = totalP;
+    console.log(totalP);
 }
 // Enlaza el botón con el enlace de la url indicada
 function procedimientoFinal() {
-    location.href = 'confirmarPedido.html';
+    location.href = 'confirmarPedido.php';
 }
 
+/* Scripts para la página confirmarpedido */
 
+function crono() {
+    var tiempo = parseInt(document.getElementById('crono').innerText);
+    if (tiempo > 0) {
+        tiempo--;
+        document.getElementById('crono').innerText = tiempo;
+    } else {
+        clearInterval(crono);
+    }
+}
 
+function inicio() {
+    var control = setInterval(crono, 60000);
+}
 
 
 /* Scripts anteriormente situado en pedidos.html */
