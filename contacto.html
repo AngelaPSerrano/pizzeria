@@ -24,131 +24,150 @@
         <a href="inicio.html">Inicio</a>
     </nav>
 
-    <section class="contenido">
-        <div class="contactoLeft">
-            <h3 class="seccion">Elige una ciudad</h3>
-            <select name="" id="locales" class="seleccion" onchange="ciudades()">
-                <option selected disabled>Ciudad</option>
-                <option value="Madrid">Madrid</option>
-                <option value="Barcelona">Barcelona</option>
-                <option value="Sevilla">Sevilla</option>
-                <option value="Valencia">Valencia</option>
-                <option value="Zaragoza">Zaragoza</option>
-            </select>
-            <h3 id="eligeTienda" class="seccion">Elige una tienda</h3>
-            <div class="ciudad" id="madrid">
-                <div class="tienda" id="m1" onclick="verm1()">
-                    <h4><strong>CENTRO COMERCIAL PRINCIPE PÍO</strong></h4>
-                    <p>Paseo de la Florida, 2</p>
+    <section class="contenidoContacto">
+            <div class="contenido">
+                <div class="contactoLeft">
+                    <h3 class="seccion">Elige una ciudad</h3>
+                    <select name="" id="locales" class="seleccion" onchange="ciudades()">
+                        <option selected disabled>Ciudad</option>
+                        <option value="Madrid">Madrid</option>
+                        <option value="Barcelona">Barcelona</option>
+                        <option value="Sevilla">Sevilla</option>
+                        <option value="Valencia">Valencia</option>
+                        <option value="Zaragoza">Zaragoza</option>
+                    </select>
+                    <h3 id="eligeTienda" class="seccion">Elige una tienda</h3>
+                    <div class="ciudad" id="madrid">
+                        <div class="tienda" id="m1" onclick="verm1()">
+                            <h4><strong>CENTRO COMERCIAL PRINCIPE PÍO</strong></h4>
+                            <p>Paseo de la Florida, 2</p>
+                        </div>
+                        <div class="tienda" id="m2" onclick="verm2()">
+                            <h4><strong>CENTRO COMERCIAL PLAZA RÍO 2</strong></h4>
+                            <p>Av. del Manzanares, 210</p>
+                        </div>
+                        <div class="tienda" id="m3" onclick="verm3()">
+                            <h4><strong>CENTRO COMERCIAL LA VAGUADA</strong></h4>
+                            <p>Av. de Monforte de Lemos, 36</p>
+                        </div>
+                        <div class="tienda" id="m4" onclick="verm4()">
+                            <h4><strong>CENTRO COMERCIAL MADRID SUR</strong></h4>
+                            <p>Av. Pablo Neruda, 91</p>
+                        </div>
+                    </div>
+                    <div class="ciudad" id="barcelona">
+                        <div class="tienda" id="b1" onclick="verb1()">
+                            <h4><strong>MAREMAGNUM BARCELONA</strong></h4>
+                            <p>Moll d'Espanya, 5</p>
+                        </div>
+                        <div class="tienda" id="b2" onclick="verb2()">
+                            <h4><strong>ARENAS DE BARCELONA</strong></h4>
+                            <p>Gran Via de les Corts Catalanes, 373</p>
+                        </div>
+                        <div class="tienda" id="b3" onclick="verb3()">
+                            <h4><strong>DIAGONAL MAR</strong></h4>
+                            <p>Avinguda Diagonal, 3</p>
+                        </div>
+                        <div class="tienda" id="b4" onclick="verb4()">
+                            <h4><strong>CENTRO COMERCIAL EL TRIANGLE</strong></h4>
+                            <p>Plaza de Cataluña, 1-4</p>
+                        </div>
+                    </div>
+                    <div class="ciudad" id="sevilla">
+                        <div class="tienda" id="s1" onclick="vers1()">
+                            <h4><strong>LOS ARCOS</strong></h4>
+                            <p>Av. de Andalucía, S/N</p>
+                        </div>
+                        <div class="tienda" id="s2" onclick="vers2()">
+                            <h4><strong>PLAZA DE ARMAS</strong></h4>
+                            <p>Plaza la Legión, s/n</p>
+                        </div>
+                        <div class="tienda" id="s3" onclick="vers3()">
+                            <h4><strong>VIAPOL CENTER</strong></h4>
+                            <p>Av. de Diego Martínez Barrio, 4</p>
+                        </div>
+                        <div class="tienda" id="s4" onclick="vers4()">
+                            <h4><strong>NERVION PLAZA</strong></h4>
+                            <p>Calle Luis de Morales, 3</p>
+                        </div>
+                    </div>
+                    <div class="ciudad" id="valencia">
+                        <div class="tienda" id="v1" onclick="verv1()">
+                            <h4><strong>AQUA MULTIESPACIO</strong></h4>
+                            <p>Calle de Menorca, 19</p>
+                        </div>
+                        <div class="tienda" id="v2" onclick="verv2()">
+                            <h4><strong>CENTRO COMERCIAL EL SALER</strong></h4>
+                            <p>Av. del Professor López Piñero, 16</p>
+                        </div>
+                        <div class="tienda" id="v3" onclick="verv3()">
+                            <h4><strong>NUEVO CENTRO</strong></h4>
+                            <p>Av. de Pius XII, 2</p>
+                        </div>
+                        <div class="tienda" id="v4" onclick="verv4()">
+                            <h4><strong>CENTRO COMERCIAL GRAN TURIA</strong></h4>
+                            <p>Plaza de Europa, s/n</p>
+                        </div>
+                    </div>
+                    <div class="ciudad" id="zaragoza">
+                        <div class="tienda" id="z1" onclick="verz1()">
+                            <h4><strong>CENTRO COMERCIAL AUGUSTA</strong></h4>
+                            <p>Av. Navarra, 180</p>
+                        </div>
+                        <div class="tienda" id="z2" onclick="verz2()">
+                            <h4><strong>CENTRO COMERCIAL GRAN CASA</strong></h4>
+                            <p>Calle de María Zambrano, 35</p>
+                        </div>
+                        <div class="tienda" id="z3" onclick="verz3()">
+                            <h4><strong>ARAGONIA</strong></h4>
+                            <p>Av. Juan Carlos I, 44</p>
+                        </div>
+                        <div class="tienda" id="z4" onclick="verz4()">
+                            <h4><strong>PUERTO VENECIA</strong></h4>
+                            <p>Travesía Jardines Reales, 7</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="tienda" id="m2" onclick="verm2()">
-                    <h4><strong>CENTRO COMERCIAL PLAZA RÍO 2</strong></h4>
-                    <p>Av. del Manzanares, 210</p>
-                </div>
-                <div class="tienda" id="m3" onclick="verm3()">
-                    <h4><strong>CENTRO COMERCIAL LA VAGUADA</strong></h4>
-                    <p>Av. de Monforte de Lemos, 36</p>
-                </div>
-                <div class="tienda" id="m4" onclick="verm4()">
-                    <h4><strong>CENTRO COMERCIAL MADRID SUR</strong></h4>
-                    <p>Av. Pablo Neruda, 91</p>
+                <div class="contactoRight">
+                    <iframe class="mapa" id="mapadefault" src="https://maps.google.com/maps?q=&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+                    <iframe class="mapa" id="mapam1" src="https://maps.google.com/maps?q=Paseo%20de%20la%20Florida%2C%202%2C%2028008%20Madrid&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+                    <iframe class="mapa" id="mapam2" src="https://maps.google.com/maps?q=Av%20del%20Manzanares%2C%20210%2C%2028026%20Madrid&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+                    <iframe class="mapa" id="mapam3" src="https://maps.google.com/maps?q=Av.%20de%20Monforte%20de%20Lemos%2C%2036%2C%2028029%20Madrid&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+                    <iframe class="mapa" id="mapam4" src="https://maps.google.com/maps?q=Av.%20Pablo%20Neruda%2C%2091%2C%2028018%20Madrid&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+                    <iframe class="mapa" id="mapab1" src="https://maps.google.com/maps?q=Moll%20d'Espanya%2C%205%2C%2008039%20Barcelona&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+                    <iframe class="mapa" id="mapab2" src="https://maps.google.com/maps?q=Gran%20Via%20de%20les%20Corts%20Catalanes%2C%20373%20-%20385%2C%2008015%20Barcelona&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+                    <iframe class="mapa" id="mapab3" src="https://maps.google.com/maps?q=Avinguda%20Diagonal%2C%203%2C%2008019%20Barcelona&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+                    <iframe class="mapa" id="mapab4" src="https://maps.google.com/maps?q=Pla%C3%A7a%20de%20Catalunya%2C%201-4%2C%2008002%20Barcelona&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+                    <iframe class="mapa" id="mapas1" src="https://maps.google.com/maps?q=C.C.%20Los%20Arcos%2C%20Av.%20de%20Andaluc%C3%ADa%2C%20s%2Fn%2C%2041007%20Sevilla&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+                    <iframe class="mapa" id="mapas2" src="https://maps.google.com/maps?q=Plaza%20la%20Legi%C3%B3n%2C%20s%2Fn%2C%2041001%20Sevilla&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+                    <iframe class="mapa" id="mapas3" src="https://maps.google.com/maps?q=Av.%20de%20Diego%20Mart%C3%ADnez%20Barrio%2C%204%2C%2041013%20Sevilla&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+                    <iframe class="mapa" id="mapas4" src="https://maps.google.com/maps?q=Calle%20Luis%20de%20Morales%2C%203%2C%2041005%20Sevilla&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+                    <iframe class="mapa" id="mapav1" src="https://maps.google.com/maps?q=Carrer%20de%20Menorca%2C%2019%2C%2046023%20Val%C3%A8ncia&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+                    <iframe class="mapa" id="mapav2" src="https://maps.google.com/maps?q=Av.%20del%20Professor%20L%C3%B3pez%20Pi%C3%B1ero%2C%2016%2C%2046013%20Val%C3%A8ncia&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+                    <iframe class="mapa" id="mapav3" src="https://maps.google.com/maps?q=Av.%20de%20Pius%20XII%2C%202%2C%2046009%20Val%C3%A8ncia&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+                    <iframe class="mapa" id="mapav4" src="https://maps.google.com/maps?q=centro%20Comercial%20Gran%20Turia&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+                    <iframe class="mapa" id="mapaz1" src="https://maps.google.com/maps?q=Av.%20Navarra%2C%20180%2C%2050011%20Zaragoza&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+                    <iframe class="mapa" id="mapaz2" src="https://maps.google.com/maps?q=Calle%20de%20la%20Poetisa%20Mar%C3%ADa%20Zambrano%2C%2035%2C%2050018%20Zaragoza&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+                    <iframe class="mapa" id="mapaz3" src="https://maps.google.com/maps?q=Av.%20Juan%20Carlos%20I%2C%2044%2C%2050009%20Zaragoza&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+                    <iframe class="mapa" id="mapaz4" src="https://maps.google.com/maps?q=INTU%20PUERTO%20VENECIA&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
                 </div>
             </div>
-            <div class="ciudad" id="barcelona">
-                <div class="tienda" id="b1" onclick="verb1()">
-                    <h4><strong>MAREMAGNUM BARCELONA</strong></h4>
-                    <p>Moll d'Espanya, 5</p>
-                </div>
-                <div class="tienda" id="b2" onclick="verb2()">
-                    <h4><strong>ARENAS DE BARCELONA</strong></h4>
-                    <p>Gran Via de les Corts Catalanes, 373</p>
-                </div>
-                <div class="tienda" id="b3" onclick="verb3()">
-                    <h4><strong>DIAGONAL MAR</strong></h4>
-                    <p>Avinguda Diagonal, 3</p>
-                </div>
-                <div class="tienda" id="b4" onclick="verb4()">
-                    <h4><strong>CENTRO COMERCIAL EL TRIANGLE</strong></h4>
-                    <p>Plaza de Cataluña, 1-4</p>
-                </div>
+        <div>
+            <h3 class="seccion">SÍGUENOS EN REDES SOCIALES</h3>
+            <div class="gridInicio-container">
+                <a class="gridInicio-item" href="https://facebook.com" target="_blank">
+                    <img src="img/inicio/facebook.jpg" height="160px" width="160px;">
+                    <h3 class="seccion">FACEBOOK</h2>
+                </a>
+                <a class="gridInicio-item" href="https://twitter.com" target="_blank">
+                    <img src="img/inicio/twitter.png" height="160px" width="160px">
+                    <h3 class="seccion">TWITTER</h2>
+                </a>
+                <a class="gridInicio-item" href="https://instagram.com" target="_blank">
+                    <img src="img/inicio/instagram.png" height="160px" width="160px">
+                    <h3 class="seccion">INSTAGRAM</h2>
+                </a>
             </div>
-            <div class="ciudad" id="sevilla">
-                <div class="tienda" id="s1" onclick="vers1()">
-                    <h4><strong>LOS ARCOS</strong></h4>
-                    <p>Av. de Andalucía, S/N</p>
-                </div>
-                <div class="tienda" id="s2" onclick="vers2()">
-                    <h4><strong>PLAZA DE ARMAS</strong></h4>
-                    <p>Plaza la Legión, s/n</p>
-                </div>
-                <div class="tienda" id="s3" onclick="vers3()">
-                    <h4><strong>VIAPOL CENTER</strong></h4>
-                    <p>Av. de Diego Martínez Barrio, 4</p>
-                </div>
-                <div class="tienda" id="s4" onclick="vers4()">
-                    <h4><strong>NERVION PLAZA</strong></h4>
-                    <p>Calle Luis de Morales, 3</p>
-                </div>
-            </div>
-            <div class="ciudad" id="valencia">
-                <div class="tienda" id="v1" onclick="verv1()">
-                    <h4><strong>AQUA MULTIESPACIO</strong></h4>
-                    <p>Calle de Menorca, 19</p>
-                </div>
-                <div class="tienda" id="v2" onclick="verv2()">
-                    <h4><strong>CENTRO COMERCIAL EL SALER</strong></h4>
-                    <p>Av. del Professor López Piñero, 16</p>
-                </div>
-                <div class="tienda" id="v3" onclick="verv3()">
-                    <h4><strong>NUEVO CENTRO</strong></h4>
-                    <p>Av. de Pius XII, 2</p>
-                </div>
-                <div class="tienda" id="v4" onclick="verv4()">
-                    <h4><strong>CENTRO COMERCIAL GRAN TURIA</strong></h4>
-                    <p>Plaza de Europa, s/n</p>
-                </div>
-            </div>
-            <div class="ciudad" id="zaragoza">
-                <div class="tienda" id="z1" onclick="verz1()">
-                    <h4><strong>CENTRO COMERCIAL AUGUSTA</strong></h4>
-                    <p>Av. Navarra, 180</p>
-                </div>
-                <div class="tienda" id="z2" onclick="verz2()">
-                    <h4><strong>CENTRO COMERCIAL GRAN CASA</strong></h4>
-                    <p>Calle de María Zambrano, 35</p>
-                </div>
-                <div class="tienda" id="z3" onclick="verz3()">
-                    <h4><strong>ARAGONIA</strong></h4>
-                    <p>Av. Juan Carlos I, 44</p>
-                </div>
-                <div class="tienda" id="z4" onclick="verz4()">
-                    <h4><strong>PUERTO VENECIA</strong></h4>
-                    <p>Travesía Jardines Reales, 7</p>
-                </div>
-            </div>
-        </div>
-        <div class="contactoRight">
-            <iframe class="mapa" id="mapadefault" src="https://maps.google.com/maps?q=&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
-            <iframe class="mapa" id="mapam1" src="https://maps.google.com/maps?q=Paseo%20de%20la%20Florida%2C%202%2C%2028008%20Madrid&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
-            <iframe class="mapa" id="mapam2" src="https://maps.google.com/maps?q=Av%20del%20Manzanares%2C%20210%2C%2028026%20Madrid&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
-            <iframe class="mapa" id="mapam3" src="https://maps.google.com/maps?q=Av.%20de%20Monforte%20de%20Lemos%2C%2036%2C%2028029%20Madrid&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
-            <iframe class="mapa" id="mapam4" src="https://maps.google.com/maps?q=Av.%20Pablo%20Neruda%2C%2091%2C%2028018%20Madrid&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
-            <iframe class="mapa" id="mapab1" src="https://maps.google.com/maps?q=Moll%20d'Espanya%2C%205%2C%2008039%20Barcelona&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
-            <iframe class="mapa" id="mapab2" src="https://maps.google.com/maps?q=Gran%20Via%20de%20les%20Corts%20Catalanes%2C%20373%20-%20385%2C%2008015%20Barcelona&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
-            <iframe class="mapa" id="mapab3" src="https://maps.google.com/maps?q=Avinguda%20Diagonal%2C%203%2C%2008019%20Barcelona&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
-            <iframe class="mapa" id="mapab4" src="https://maps.google.com/maps?q=Pla%C3%A7a%20de%20Catalunya%2C%201-4%2C%2008002%20Barcelona&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
-            <iframe class="mapa" id="mapas1" src="https://maps.google.com/maps?q=C.C.%20Los%20Arcos%2C%20Av.%20de%20Andaluc%C3%ADa%2C%20s%2Fn%2C%2041007%20Sevilla&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
-            <iframe class="mapa" id="mapas2" src="https://maps.google.com/maps?q=Plaza%20la%20Legi%C3%B3n%2C%20s%2Fn%2C%2041001%20Sevilla&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
-            <iframe class="mapa" id="mapas3" src="https://maps.google.com/maps?q=Av.%20de%20Diego%20Mart%C3%ADnez%20Barrio%2C%204%2C%2041013%20Sevilla&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
-            <iframe class="mapa" id="mapas4" src="https://maps.google.com/maps?q=Calle%20Luis%20de%20Morales%2C%203%2C%2041005%20Sevilla&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
-            <iframe class="mapa" id="mapav1" src="https://maps.google.com/maps?q=Carrer%20de%20Menorca%2C%2019%2C%2046023%20Val%C3%A8ncia&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
-            <iframe class="mapa" id="mapav2" src="https://maps.google.com/maps?q=Av.%20del%20Professor%20L%C3%B3pez%20Pi%C3%B1ero%2C%2016%2C%2046013%20Val%C3%A8ncia&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
-            <iframe class="mapa" id="mapav3" src="https://maps.google.com/maps?q=Av.%20de%20Pius%20XII%2C%202%2C%2046009%20Val%C3%A8ncia&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
-            <iframe class="mapa" id="mapav4" src="https://maps.google.com/maps?q=centro%20Comercial%20Gran%20Turia&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
-            <iframe class="mapa" id="mapaz1" src="https://maps.google.com/maps?q=Av.%20Navarra%2C%20180%2C%2050011%20Zaragoza&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
-            <iframe class="mapa" id="mapaz2" src="https://maps.google.com/maps?q=Calle%20de%20la%20Poetisa%20Mar%C3%ADa%20Zambrano%2C%2035%2C%2050018%20Zaragoza&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
-            <iframe class="mapa" id="mapaz3" src="https://maps.google.com/maps?q=Av.%20Juan%20Carlos%20I%2C%2044%2C%2050009%20Zaragoza&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
-            <iframe class="mapa" id="mapaz4" src="https://maps.google.com/maps?q=INTU%20PUERTO%20VENECIA&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
         </div>
     </section>
 
