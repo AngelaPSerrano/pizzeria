@@ -35,6 +35,8 @@ function reset() {
                 document.getElementById("cantidadiSalami").innerHTML = 0;
             }
         }
+        document.getElementById("ingredientesCreaPizza").innerText = "Salsa de tomate, queso";
+        document.getElementById("precioCreaPizza").innerText = 9
     }
 }
 

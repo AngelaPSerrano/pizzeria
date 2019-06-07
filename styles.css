@@ -469,3 +469,41 @@ td button {
         margin-bottom: 10px;
     }
 }
+
+
+/*///////////////////////////*/
+
+.form-popup {
+    display: none;
+    border: 3px solid #f1f1f1;
+    background-color: white;
+    text-align: center;
+}
+
+
+/* Full-width input fields */
+
+.form-container input[type=text],
+.form-container select {
+    width: 80%;
+    padding: 8px;
+    border: none;
+    background: #dfdfdf;
+    margin: 1px;
+}
+
+
+/* When the inputs get focus, do something */
+
+.form-container input[type=text]:focus {
+    border: 1px solid black;
+    /*para compenasar el border*/
+    margin: 0;
+}
+
+
+/* Add some hover effects to buttons */
+
+.form-container {
+    opacity: 1;
+}
