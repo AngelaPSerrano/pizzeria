@@ -116,7 +116,6 @@ footer {
     max-width: 100%;
 }
 
-
 /* Página 'Pedidos' */
 
 .contenido {
@@ -265,6 +264,18 @@ footer {
 
 
 /* Página 'Contacto' */
+
+.contenidoContacto {
+    width: 100%;
+    max-width: 1250px;
+    padding: 0px;
+    margin: 10px auto 0px auto;
+}
+
+.contactoTiendas {
+    display: flex;
+    width: 100%;
+}
 
 .contactoLeft {
     flex: 40%;
